@@ -1,5 +1,5 @@
 const db = require('../services/db')
 
-exports.get = (res, req) => {
-  req.json(Object.keys(db.repos.value()))
+exports.get = (req, res) => {
+  res.json(Object.keys(db.repos.value()))
 }
