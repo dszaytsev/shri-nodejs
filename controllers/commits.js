@@ -11,7 +11,8 @@ exports.getCommits = async (req, res, next) => {
   if (!repo) next(error('Repo not found', 422))
 
   try {
-    const commits = await git.log(repo.path, commitHash)
+    const hash = commitHash || await git.getMainBranchHash(repo.path)
+    const commits = await git.log(repo.path, hash)
 
     res.json(commits)
   } catch (err) {

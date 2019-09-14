@@ -1,4 +1,4 @@
-const { spawn } = require('child_process')
+const { spawn, exec } = require('child_process')
 
 // *TODO: add DRY if there's time | Created at: 14.Sep.2019
 exports.log = (path, commit = '') => new Promise((resolve, reject) => {
@@ -23,6 +23,7 @@ exports.log = (path, commit = '') => new Promise((resolve, reject) => {
   })
 
   child.stderr.on('data', data => errors += data)
+
   child.on('close', () => errors === '' ? resolve(commits) : reject(errors))
   child.on('error', err => reject(err))
 })
@@ -39,7 +40,40 @@ exports.diff = (path, commit = '') => new Promise((resolve, reject) => {
   child.stdout.on('data', data => diff += data)
   child.stderr.on('data', data => errors += data)
 
-  child.stderr.on('data', data => errors += data)
   child.on('close', () => errors === '' ? resolve(diff) : reject(errors))
   child.on('error', err => reject(err))
+})
+
+exports.tree = async (repoPath, commitHash = '') => new Promise((resolve, reject) => {
+  const files = []
+  let errors = ''
+
+  const child = spawn(`git ls-tree --name-only -r ${commitHash}`, {
+    cwd: repoPath,
+    shell: true
+  })
+
+  child.stdout.on('data', data => files.push(...data.toString().split('\n')))
+  child.stderr.on('data', data => errors += data)
+
+  child.on('close', () => errors === '' ? resolve(files) : reject(errors))
+  child.on('error', err => reject(err))
+})
+
+exports.getMainBranchHash = path => new Promise((resolve, reject) => {
+  exec('git symbolic-ref --short HEAD | xargs git rev-parse', { cwd: path }, (err, stdout, stderr) => {
+    if (err) reject(err)
+    if (stderr) reject(stderr)
+
+    resolve(stdout.trim())
+  })
+})
+
+exports.getRevHash = (path, commitHash) => new Promise((resolve, reject) => {
+  exec(`git rev-parse ${commitHash}`, { cwd: path }, (err, stdout, stderr) => {
+    if (err) reject(err)
+    if (stderr) reject(stderr)
+
+    resolve(stdout.trim())
+  })
 })

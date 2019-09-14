@@ -1,7 +1,7 @@
 const error = require('./error')
-const { readDirsOnly } = require('./dir')
+const dir = require('./dir')
 
 module.exports = {
   error,
-  readDirsOnly
+  dir
 }

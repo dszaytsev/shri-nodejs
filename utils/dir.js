@@ -9,3 +9,14 @@ exports.readDirsOnly = dirPath => readdir(dirPath, { withFileTypes: true })
     .filter(d => d.isDirectory())
     .map(d => ({ name: d.name, path: path.join(dirPath, d.name) }))
   )
+
+exports.parsePathToTree = (paths = []) => {
+  const result = {}
+
+  paths.forEach(p => p
+    .split('/')
+    .reduce((acc, curr) => acc[curr] = acc[curr] || {}, result)
+  )
+
+  return result
+}
