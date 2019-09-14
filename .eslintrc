@@ -1,0 +1,26 @@
+{
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2019
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "indent": [2, 2],
+    "quotes": [2, "single"],
+    "no-extra-semi": "error",
+    "semi": [2, "never"],
+    "prefer-const": "error",
+    "no-console": "off",
+    "no-empty-pattern": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^_",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
+}
