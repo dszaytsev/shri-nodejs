@@ -14,7 +14,10 @@ app.use((err, _req, res, _next) => {
   const status = err.status || 500
 
   res.status(status)
-  res.json({ error: err.message })
+  res.json({
+    status: 'error',
+    message: err.message
+  })
 })
 
 initDb(pathToRepos)

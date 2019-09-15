@@ -8,6 +8,7 @@ const router = Router()
 const repos = Router()
 
 repos.get('/', reposController.get)
+repos.delete('/:repositoryId', reposController.delete)
 repos.get('/:repositoryId/commits/:commitHash?', commitsController.getCommits)
 repos.get('/:repositoryId/commits/:commitHash/diff', commitsController.diff)
 repos.get('/:repositoryId/tree/:commitHash?/:path([^/]*)?', contentController.repoContent) // *TODO: make (/tree...)? | Created at: 14.Sep.2019
