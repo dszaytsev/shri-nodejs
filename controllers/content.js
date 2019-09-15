@@ -23,8 +23,7 @@ exports.repoContent = async (req, res, next) => {
     if (!treeFromDb) db.repos.set(hashFilesPath, tree).write()
 
     if (path) {
-      // :)
-      const pathsFromPath = db.repos.get(`${hashFilesPath}.${path.split('/').join('.')}`).value()
+      const pathsFromPath = db.repos.get(`${hashFilesPath}.${path.split('/').join('.')}`).value() // :)
       res.json(pathsFromPath)
     }
     else res.json(tree)

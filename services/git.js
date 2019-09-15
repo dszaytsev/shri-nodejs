@@ -77,3 +77,22 @@ exports.getRevHash = (path, commitHash) => new Promise((resolve, reject) => {
     resolve(stdout.trim())
   })
 })
+
+exports.showFile = (path, commitHash, filePath) => new Promise((resolve, reject) => {
+  const chunks = []
+  let errors = ''
+
+  const child = spawn(`git --no-pager show ${commitHash}:${filePath} `, {
+    cwd: path,
+    shell: true
+  })
+
+  child.stdout.on('data', data => chunks.push(Buffer.from(data)))
+  child.stderr.on('data', data => errors += data)
+
+  child.on('close', () => errors === ''
+    ? resolve(Buffer.concat(chunks))
+    : reject(errors)
+  )
+  child.on('error', err => reject(err))
+})
