@@ -96,3 +96,25 @@ exports.showFile = (path, commitHash, filePath) => new Promise((resolve, reject)
   )
   child.on('error', err => reject(err))
 })
+
+exports.clone = (repoUrl, path) => new Promise((resolve, reject) => {
+  let errors = ''
+
+  const child = spawn(`git clone ${repoUrl}`, {
+    cwd: path,
+    shell: true
+  })
+
+  child.stderr.on('data', data => {
+    // horrible crutch cause git clone writes to stderr
+    if (!data.includes('Cloning into')) errors += data
+  })
+
+  child.on('close', () => errors === ''
+    ? resolve()
+    : reject(errors)
+  )
+  child.on('error', err => {
+    reject(err)
+  })
+})

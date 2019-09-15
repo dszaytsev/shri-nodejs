@@ -8,6 +8,7 @@ const router = Router()
 const repos = Router()
 
 repos.get('/', reposController.get)
+repos.post('/', reposController.post)
 repos.delete('/:repositoryId', reposController.delete)
 repos.get('/:repositoryId/commits/:commitHash?', commitsController.getCommits)
 repos.get('/:repositoryId/commits/:commitHash/diff', commitsController.diff)
