@@ -1,20 +1,4 @@
-const { spawn, exec } = require('child_process')
-
-function git(command, { path, acc = '' }, readFn) {
-  return new Promise((resolve, reject) => {
-    let errors = ''
-
-    const child = spawn(`git ${command}`, { cwd: path, shell: true })
-
-    child.stdout.on('data', data => {
-      acc = readFn(data, acc)
-    })
-    child.stderr.on('data', data => errors += data)
-
-    child.on('close', () => errors === '' ? resolve(acc) : reject(errors))
-    child.on('error', reject)
-  })
-}
+const { spawn } = require('child_process')
 
 exports.log = (path, commit = '') => {
   const SEPARATOR = ';separator;'
@@ -58,23 +42,14 @@ exports.showFile = async (path, commitHash, filePath) => {
   return Buffer.concat(chunks)
 }
 
-exports.getMainBranchHash = path => new Promise((resolve, reject) => {
-  exec('git symbolic-ref --short HEAD | xargs git rev-parse', { cwd: path }, (err, stdout, stderr) => {
-    if (err) reject(err)
-    if (stderr) reject(stderr)
+exports.getMainBranchHash = path => git('symbolic-ref --short HEAD | xargs git rev-parse',
+  { path, acc: '' },
+  (data, acc) => data += acc)
 
-    resolve(stdout.trim())
-  })
-})
-
-exports.getRevHash = (path, commitHash) => new Promise((resolve, reject) => {
-  exec(`git rev-parse ${commitHash}`, { cwd: path }, (err, stdout, stderr) => {
-    if (err) reject(err)
-    if (stderr) reject(stderr)
-
-    resolve(stdout.trim())
-  })
-})
+exports.getRevHash = (path, commitHash) => git(`rev-parse ${commitHash}`,
+  { path, acc: '' },
+  (data, acc) => data += acc
+)
 
 exports.clone = (repoUrl, path) => new Promise((resolve, reject) => {
   let errors = ''
@@ -89,3 +64,19 @@ exports.clone = (repoUrl, path) => new Promise((resolve, reject) => {
   child.on('close', () => errors === '' ? resolve() : reject(errors))
   child.on('error', reject)
 })
+
+function git(command, { path, acc = '' }, readFn) {
+  return new Promise((resolve, reject) => {
+    let errors = ''
+
+    const child = spawn(`git ${command}`, { cwd: path, shell: true })
+
+    child.stdout.on('data', data => {
+      acc = readFn(data, acc)
+    })
+    child.stderr.on('data', data => errors += data)
+
+    child.on('close', () => errors === '' ? resolve(acc) : reject(errors))
+    child.on('error', reject)
+  })
+}
