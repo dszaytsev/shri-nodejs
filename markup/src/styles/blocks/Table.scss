@@ -1,0 +1,27 @@
+.Table {
+  &__row {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 16px 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+
+    &_head {
+      padding-bottom: 8px;
+      color: $ghostTextColor;
+    }
+
+    & + & {
+      border-top: 1px solid $mediumSeparatorColor;
+    }
+  }
+
+  &__cell {
+    word-break: break-all;
+
+    &:last-child {
+      margin-left: auto;
+    }
+  }
+}

@@ -66,3 +66,4 @@ typings/
 .DS_Store
 
 db.json
+.cache

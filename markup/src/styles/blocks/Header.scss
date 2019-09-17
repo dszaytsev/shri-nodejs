@@ -1,0 +1,19 @@
+.Header {
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+  height: 56px;
+  border-bottom: 1px solid $lightSeparatorColor;
+
+  &__container {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    color: $primaryTextColor;
+    background-repeat: no-repeat;
+  }
+}

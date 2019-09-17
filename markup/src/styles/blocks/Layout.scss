@@ -1,0 +1,13 @@
+.Layout {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    flex: 1;
+  }
+
+  &__container {
+    width: 1376px;
+    margin: 0 auto;
+  }
+}

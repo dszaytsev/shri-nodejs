@@ -1,0 +1,14 @@
+.Navigation {
+  padding-top: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $mediumSeparatorColor;
+
+  &__item {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+
+    &_isActive {
+    }
+  }
+}

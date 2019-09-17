@@ -1,0 +1,43 @@
+.Repository {
+  &__header {
+    padding-top: 12px;
+  }
+
+  &__title {
+    display: inline-block;
+    color: $primaryTextColor;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &__branch {
+    margin-bottom: 10px;
+  }
+
+  &__lastCommit {
+    color: $primaryTextColor;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__tabs {
+    margin-top: 18px;
+    border-bottom: 1px solid $mediumSeparatorColor;
+  }
+
+  &__files {
+    .Table__cell {
+      &:nth-child(1) {
+        flex-basis: 242px;
+      }
+
+      &:nth-child(2) {
+        flex-basis: 258px;
+      }
+
+      &:nth-child(3) {
+        flex-basis: 476px;
+      }
+    }
+  }
+}
