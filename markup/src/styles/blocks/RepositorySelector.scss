@@ -1,0 +1,96 @@
+.RepositorySelector {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  &:hover {
+    &:after {
+      transform: rotate(0);
+    }
+
+    .RepositorySelector__dropdown {
+      visibility: visible;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    display: block;
+    height: 3px;
+    background: $redColor;
+    content: '';
+  }
+
+  &:after {
+    position: absolute;
+    left: 100%;
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-left: 6px;
+    background-image: url('../images/arrow_up.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(180deg);
+    content: '';
+  }
+
+  &__title {
+    position: relative;
+    font-size: 14px;
+    line-height: 18px;
+
+    &:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 100%;
+      width: 18px;
+      content: '';
+    }
+  }
+
+  &__label {
+    font-weight: 500;
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    z-index: -1;
+    min-width: 266px;
+    margin-top: 1px;
+    padding: 14px 22px 18px;
+    background: $backgroundColor;
+    box-shadow: 0 4px 16px $boxShadowColor;
+    visibility: hidden;
+
+    // disable box-shadow on top
+    &:after {
+      position: absolute;
+      top: -17px;
+      right: -16px;
+      left: -16px;
+      display: block;
+      height: 16px;
+      background-color: $backgroundColor;
+      content: '';
+    }
+  }
+
+  &__repo {
+    display: block;
+    color: #000;
+    line-height: 20px;
+    text-decoration: none;
+
+    & + & {
+      margin-top: 16px;
+    }
+  }
+}

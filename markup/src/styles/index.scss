@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   color: $primaryTextColor;
-  font-family: sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 @import './blocks/Committer.scss';
@@ -18,5 +18,6 @@ body {
 @import './blocks/Link.scss';
 @import './blocks/Navigation.scss';
 @import './blocks/Repository.scss';
+@import './blocks/RepositorySelector.scss';
 @import './blocks/Table.scss';
 @import './blocks/Tabs.scss';

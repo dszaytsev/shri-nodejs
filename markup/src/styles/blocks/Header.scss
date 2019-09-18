@@ -13,7 +13,13 @@
   &__logo {
     display: flex;
     align-items: center;
+    margin-right: 40px;
     color: $primaryTextColor;
     background-repeat: no-repeat;
+  }
+
+  &__repo {
+    display: flex;
+    align-items: stretch;
   }
 }
