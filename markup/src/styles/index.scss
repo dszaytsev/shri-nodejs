@@ -10,6 +10,7 @@ body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
+@import './blocks/BranchSelector.scss';
 @import './blocks/Committer.scss';
 @import './blocks/FileIcon.scss';
 @import './blocks/Footer.scss';
