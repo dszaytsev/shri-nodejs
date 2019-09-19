@@ -1,7 +1,7 @@
 .Repository
   .Repository__header
     .Repository__branch
-      .Repository__title arcadia
+      .Repository__title ya.make
 
       .Repository__branchSelector
         include ../blocks/BranchSelector
@@ -20,7 +20,8 @@
       span.Committer robot-srch-releaser
 
     .Repository__tabs
-      +tabs([{ title: 'Files', href: '#', isActive: true }, { title: 'Branches', href: '#' }])
+      +tabs([{ title: 'Details', href: '#', isActive: true }, { title: 'History', href: '#' }])
 
-    .Repository__files
-      include ../blocks/RepositoryFiles
+    .Repository__file
+      include ../blocks/FileDetails
+

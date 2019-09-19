@@ -2,5 +2,11 @@ mixin navigation(items)
   - let lastIndex = items.length - 1
   .Navigation
     each item, index in items
-      .Navigation__item(class=(lastIndex === index ? 'Navigation__item_isActive' : ''))
+      .Navigation__item(class=(lastIndex === index && 'Navigation__item_isActive'))
         = item
+
+mixin tabs(items)
+  .Tabs
+    each item in items
+      a.Tabs__item(href=item.href class=(item.isActive && 'Tabs__item_isActive'))= item.title
+

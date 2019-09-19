@@ -1,0 +1,13 @@
+.Token {
+  &_comment {
+    color: $secondaryTextColor;
+  }
+
+  &_keyword {
+    font-weight: bold;
+  }
+
+  &_string {
+    color: $blueColor;
+  }
+}

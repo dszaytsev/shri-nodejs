@@ -1,9 +1,12 @@
 .File {
+  overflow: hidden;
   border: 1px solid $mediumSeparatorColor;
+  border-radius: 5px;
 
   &__header {
     display: flex;
-    padding: 14px 8px 16px;
+    align-items: center;
+    padding: 12px 16px;
     font-size: 14px;
     line-height: 20px;
     background-color: #f5f5f5;
@@ -19,5 +22,9 @@
       height: 20px;
       background-image: url('../images/icon_file.svg');
     }
+  }
+
+  &__right {
+    margin-left: auto;
   }
 }
