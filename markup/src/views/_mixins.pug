@@ -19,14 +19,14 @@ mixin fileHistoryRecord(record)
       .FileHistory-Record__message= message
       .FileHistory-Record__commitBlock
         .FileHistory-Record__hash
-          a.FileHistory-Record__commitLink(href='#')= hash
+          a.FileHistory-Record__commitLink.Link(href='#')= hash
         .FileHistory-Record__committer
           | by
           = ' '
           .Committer= committer
         .FileHistory-Record__time= time
     .FileHistory-Record__commit
-      a.FileHistory-Record__commitLink(href='#')= hash
+      a.FileHistory-Record__commitLink.Link(href='#')= hash
     //- интересно, для чего это
     .FileHistory-Record__icon
 

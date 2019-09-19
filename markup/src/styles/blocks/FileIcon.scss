@@ -1,5 +1,5 @@
 .FileIcon {
-  @each $icon in folder file markup {
+  @each $icon in folder file markup branch {
     &_#{$icon}:before {
       background-image: url('../images/icon_#{$icon}.svg');
     }
