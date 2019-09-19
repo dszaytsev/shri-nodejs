@@ -1,4 +1,4 @@
-.Table
+.Table.RepositoryFiles
   .Table__row.Table__row_head
     .Table__cell Name
     .Table__cell Last commit
@@ -7,14 +7,18 @@
     .Table__cell Updated
 
   .Table__row
-    .Table__cell: .FileIcon.FileIcon_folder api
+    .Table__cell
+      .FileIcon.FileIcon_folder.RepositoryFiles__icon
+      | api
     .Table__cell: a.Link(href='#') d53dsv
     .Table__cell [vcs] move http to arc
     .Table__cell: .Committer noxoomo
     .Table__cell 4 s ago
 
   .Table__row
-    .Table__cell: .FileIcon.FileIcon_folder ci
+    .Table__cell
+      .FileIcon.FileIcon_folder.RepositoryFiles__icon
+      | ci
     .Table__cell: a.Link(href='#') d53dsv
     .Table__cell [vcs] test for empty commit message
     .Table__cell: .Committer nikitxskv

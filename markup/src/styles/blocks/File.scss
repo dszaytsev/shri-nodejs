@@ -1,0 +1,23 @@
+.File {
+  border: 1px solid $mediumSeparatorColor;
+
+  &__header {
+    display: flex;
+    padding: 14px 8px 16px;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid $mediumSeparatorColor;
+  }
+
+  &__icon {
+    margin-right: 12px;
+    background-position: center;
+
+    &_type_file {
+      width: 9px;
+      height: 20px;
+      background-image: url('../images/icon_file.svg');
+    }
+  }
+}

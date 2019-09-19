@@ -9,7 +9,7 @@
     "stylelint-scss": "^3.11.0"
   },
   "scripts": {
-    "start": "parcel src/views/pages/index.pug"
+    "start": "parcel src/views/pages/*.pug"
   },
   "name": "markup",
   "version": "1.0.0",

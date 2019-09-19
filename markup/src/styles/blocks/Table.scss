@@ -6,14 +6,11 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
+    border-bottom: 1px solid $mediumSeparatorColor;
 
     &_head {
       padding-bottom: 8px;
       color: $ghostTextColor;
-    }
-
-    & + & {
-      border-top: 1px solid $mediumSeparatorColor;
     }
   }
 

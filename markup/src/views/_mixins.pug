@@ -1,0 +1,6 @@
+mixin navigation(items)
+  - let lastIndex = items.length - 1
+  .Navigation
+    each item, index in items
+      .Navigation__item(class=(lastIndex === index ? 'Navigation__item_isActive' : ''))
+        = item
