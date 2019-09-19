@@ -10,3 +10,23 @@ mixin tabs(items)
     each item in items
       a.Tabs__item(href=item.href class=(item.isActive && 'Tabs__item_isActive'))= item.title
 
+mixin fileHistoryRecord(record)
+  - const { title, message, hash, committer, time, avatarUrl= '../../images/avatar.svg' } = record
+  .FileHistory-Record
+    .FileHistory-Record__avatar(style=`background-image: url("${avatarUrl}")`)
+    .FileHistory-Record__info
+      .FileHistory-Record__title= title
+      .FileHistory-Record__message= message
+      .FileHistory-Record__commitBlock
+        .FileHistory-Record__hash
+          a.FileHistory-Record__commitLink(href='#')= hash
+        .FileHistory-Record__committer
+          | by
+          = ' '
+          .Committer= committer
+        .FileHistory-Record__time= time
+    .FileHistory-Record__commit
+      a.FileHistory-Record__commitLink(href='#')= hash
+    //- интересно, для чего это
+    .FileHistory-Record__icon
+

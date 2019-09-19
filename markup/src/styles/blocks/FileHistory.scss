@@ -1,0 +1,15 @@
+.FileHistory {
+  &__day {
+    & + & {
+      margin-top: 16px;
+    }
+  }
+
+  &__date {
+    margin-bottom: 16px;
+    color: $secondaryTextColor;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

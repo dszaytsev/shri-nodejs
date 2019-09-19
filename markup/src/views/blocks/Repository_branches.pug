@@ -1,0 +1,27 @@
+.Repository
+  .Repository__header
+    .Repository__branch
+      .Repository__title ya.make
+
+      .Repository__branchSelector
+        include ../blocks/BranchSelector
+
+    .Repository__lastCommit
+      | Last commit
+      = ' '
+      a.Link(href='#') c4d248
+      = ' '
+      | on
+      = ' '
+      a.Link(href='#') 20 Oct 2017, 12:24
+      = ' '
+      | by
+      = ' '
+      span.Committer robot-srch-releaser
+
+    .Repository__tabs
+      +tabs([{ title: 'Details', href: '#', isActive: true }, { title: 'History', href: '#' }])
+
+    .Repository__file
+      include ../blocks/FileDetails
+
