@@ -58,3 +58,15 @@
     cursor: pointer;
   }
 }
+
+@include s-screen {
+  .FileDetails {
+    &-download {
+      display: none;
+    }
+
+    &-content {
+      padding: 8px 23px;
+    }
+  }
+}

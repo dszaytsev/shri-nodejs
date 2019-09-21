@@ -23,3 +23,13 @@
     }
   }
 }
+
+@include s-screen {
+  .Navigation {
+    flex-wrap: wrap;
+
+    &-item {
+      line-height: 24px;
+    }
+  }
+}

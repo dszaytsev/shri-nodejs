@@ -12,7 +12,7 @@
 
   &-branch {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     margin-bottom: 10px;
   }
 
@@ -56,6 +56,22 @@
       max-width: 550px;
       font-size: 20px;
       line-height: 24px;
+    }
+  }
+}
+
+@include s-screen {
+  .Repository {
+    &-header {
+      padding-top: 10px;
+    }
+
+    &-tabs {
+      margin-bottom: 0;
+    }
+
+    &-file {
+      margin-top: 16px;
     }
   }
 }

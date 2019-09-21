@@ -38,3 +38,9 @@
     --data-type-token-color: #b4261a;
   }
 }
+
+@include s-screen {
+  .File {
+    margin: 0 -16px;
+  }
+}

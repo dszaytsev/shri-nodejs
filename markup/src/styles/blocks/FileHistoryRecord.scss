@@ -89,3 +89,21 @@
     }
   }
 }
+
+@include s-screen {
+  .FileHistoryRecord {
+    &-commit {
+      display: none;
+    }
+
+    &-info {
+      padding-right: 0;
+    }
+
+    &-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

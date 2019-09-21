@@ -1,3 +1,4 @@
+//- *TODO: выделить в блок Dropdown | Created at: 21.Sep.2019
 .RepositorySelector
   .RepositorySelector-title
     span.RepositorySelector-label Repository
@@ -5,7 +6,9 @@
     span.RepositorySelector-current Arc
 
   .RepositorySelector-dropdown
-    .RepositorySelector-repos
-      a.RepositorySelector-repo(href='#') Arc
-      a.RepositorySelector-repo(href='#') My repository
-      a.RepositorySelector-repo(href='#') Devtools-team repository
+    .RepositorySelector-container
+      .RepositorySelector-hideControl
+      .RepositorySelector-repos
+        a.RepositorySelector-repo(href='#') Arc
+        a.RepositorySelector-repo(href='#') My repository
+        a.RepositorySelector-repo(href='#') Devtools-team repository

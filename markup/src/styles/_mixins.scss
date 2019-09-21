@@ -15,9 +15,3 @@
     @content;
   }
 }
-
-@mixin xs-screen {
-  @media (max-width: 360px) {
-    @content;
-  }
-}

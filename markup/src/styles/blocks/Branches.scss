@@ -4,4 +4,22 @@
     margin-right: 8px;
     vertical-align: middle;
   }
+
+  &-hash > a {
+    color: #177ffd;
+  }
+}
+
+@include s-screen {
+  .Branches {
+    &-name {
+      flex: 100%;
+      font-weight: bold;
+    }
+
+    &-hash {
+      flex: 100%;
+      margin-top: 8px;
+    }
+  }
 }

@@ -16,3 +16,9 @@
     margin-left: 32px;
   }
 }
+
+@include s-screen {
+  .Footer {
+    display: none;
+  }
+}

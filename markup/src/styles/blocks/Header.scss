@@ -23,3 +23,13 @@
     align-items: stretch;
   }
 }
+
+@include s-screen {
+  .Header {
+    height: 60px;
+
+    &-logo {
+      margin-right: 26px;
+    }
+  }
+}

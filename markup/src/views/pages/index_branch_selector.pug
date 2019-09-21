@@ -1,0 +1,79 @@
+
+extends ../layout
+
+block content
+  +navigation(['arcadia'])
+
+
+  .Repository
+    .Repository-header
+      .Repository-branch
+        .Repository-title arcadia
+
+        .Repository-branchSelector
+          .BranchSelector.BranchSelector_isActive
+            .BranchSelector-title trunk
+            .BranchSelector-dropdown
+              .BranchSelector-container
+                .BranchSelector-hideControl
+                .BranchSelector-branch.BranchSelector-branch_current
+                  .BranchSelector-branchTitle Trunk
+                  .BranchSelector-commit Last commit 4 s ago
+
+                .BranchSelector-separator
+                .BranchSelector-branches
+                  .BranchSelector-branch
+                    .BranchSelector-branchTitle users/rudksoy/DEVTOOLS-43865
+                    .BranchSelector-commit Last commit 1 min ago
+
+                  .BranchSelector-branch
+                    .BranchSelector-branchTitle users/rudksoy/DEVTOOLS-43865
+                    .BranchSelector-commit Last commit 1 min ago
+
+                  .BranchSelector-branch
+                    .BranchSelector-branchTitle users/rudksoy/DEVTOOLS-43865
+                    .BranchSelector-commit Last commit 1 min ago
+
+                  .BranchSelector-branch
+                    .BranchSelector-branchTitle users/rudksoy/DEVTOOLS-43865
+                    .BranchSelector-commit Last commit 1 min ago
+
+                  .BranchSelector-branch
+                    .BranchSelector-branchTitle users/rudksoy/DEVTOOLS-43865
+                    .BranchSelector-commit Last commit 1 min ago
+
+                  .BranchSelector-branch
+                    .BranchSelector-branchTitle users/rudksoy/DEVTOOLS-43865
+                    .BranchSelector-commit Last commit 1 min ago
+
+                  .BranchSelector-branch
+                    .BranchSelector-branchTitle users/rudksoy/DEVTOOLS-43865
+                    .BranchSelector-commit Last commit 1 min ago
+
+                  .BranchSelector-branch
+                    .BranchSelector-branchTitle users/rudksoy/DEVTOOLS-43865
+                    .BranchSelector-commit Last commit 1 min ago
+
+                  .BranchSelector-branch
+                    .BranchSelector-branchTitle users/rudksoy/DEVTOOLS-43865
+                    .BranchSelector-commit Last commit 1 min ago
+
+      .Repository-lastCommit
+        | Last commit
+        = ' '
+        a.Link(href='#') c4d248
+        = ' '
+        | on
+        = ' '
+        a.Link(href='#') 20 Oct 2017, 12:24
+        = ' '
+        | by
+        = ' '
+        span.Committer robot-srch-releaser
+
+    .Repository-tabs
+      +tabs([{ title: 'Files', href: '#', isActive: true }, { title: 'Branches', href: '#' }])
+
+    .Repository-files
+      include ../blocks/RepositoryFiles
+
