@@ -1,5 +1,5 @@
 .Table {
-  &__row {
+  &-row {
     display: flex;
     flex-wrap: nowrap;
     padding: 16px 8px;
@@ -15,7 +15,7 @@
     }
   }
 
-  &__cell {
+  &-cell {
     word-break: break-all;
 
     &:last-child {

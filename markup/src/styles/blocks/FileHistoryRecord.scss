@@ -1,4 +1,4 @@
-.FileHistory-Record {
+.FileHistoryRecord {
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -20,18 +20,18 @@
     }
   }
 
-  &__avatar {
+  &-avatar {
     width: 40px;
     height: 40px;
     margin-right: 12px;
   }
 
-  &__info {
+  &-info {
     flex: 1;
     padding-right: 12px;
   }
 
-  &__title {
+  &-title {
     margin-bottom: 2px;
     color: $primaryTextColor;
     font-weight: 500;
@@ -39,36 +39,36 @@
     line-height: 18px;
   }
 
-  &__message {
+  &-message {
     margin-bottom: 4px;
     font-size: 13px;
     line-height: 18px;
   }
 
-  &__commitBlock {
+  &-commitBlock {
     display: flex;
     font-size: 13px;
     line-height: 20px;
   }
 
-  &__hash {
+  &-hash {
     margin-right: 8px;
   }
 
-  &__commitLink {
+  &-commitLink {
     font-size: 13px;
     line-height: 18px;
   }
 
-  &__commit {
+  &-commit {
     flex: 0 0 270px;
     padding-right: 8px;
   }
 
-  &__icon {
+  &-icon {
     width: 16px;
     height: 20px;
-    background-image: url('../images/icon_markup__empty.svg');
+    background-image: url('../images/icon_markup-empty.svg');
     background-repeat: no-repeat;
     background-position: center top;
   }

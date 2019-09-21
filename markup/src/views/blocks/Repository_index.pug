@@ -1,12 +1,12 @@
 .Repository
-  .Repository__header
-    .Repository__branch
-      .Repository__title arcadia
+  .Repository-header
+    .Repository-branch
+      .Repository-title arcadia
 
-      .Repository__branchSelector
+      .Repository-branchSelector
         include ../blocks/BranchSelector
 
-    .Repository__lastCommit
+    .Repository-lastCommit
       | Last commit
       = ' '
       a.Link(href='#') c4d248
@@ -19,8 +19,8 @@
       = ' '
       span.Committer robot-srch-releaser
 
-    .Repository__tabs
+    .Repository-tabs
       +tabs([{ title: 'Files', href: '#', isActive: true }, { title: 'Branches', href: '#' }])
 
-    .Repository__files
+    .Repository-files
       include ../blocks/RepositoryFiles

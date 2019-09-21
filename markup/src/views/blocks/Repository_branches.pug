@@ -1,12 +1,12 @@
 .Repository
-  .Repository__header
-    .Repository__branch
-      .Repository__title ya.make
+  .Repository-header
+    .Repository-branch
+      .Repository-title ya.make
 
-      .Repository__branchSelector
+      .Repository-branchSelector
         include ../blocks/BranchSelector
 
-    .Repository__lastCommit
+    .Repository-lastCommit
       | Last commit
       = ' '
       a.Link(href='#') c4d248
@@ -19,9 +19,9 @@
       = ' '
       span.Committer robot-srch-releaser
 
-    .Repository__tabs
+    .Repository-tabs
       +tabs([{ title: 'Details', href: '#' }, { title: 'History', href: '#', isActive: true }])
 
-    .Repository__file
+    .Repository-file
       include ../blocks/Branches
 

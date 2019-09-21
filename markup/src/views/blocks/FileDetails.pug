@@ -1,49 +1,49 @@
 .File.FileDetails
-  .File__header.FileDetails__header
-    .File__icon.FileIcon.FileIcon_file
-    .File__title
+  .File-header.FileDetails-header
+    .File-icon.FileIcon.FileIcon_file
+    .File-title
       | ya.make
       = ' '
-      span.FileDetails__size (4 347 bytes)
+      span.FileDetails-size (4 347 bytes)
 
-    .File__right
-      .FileDetails__download
+    .File-right
+      .FileDetails-download
 
-  .File__content.FileDetails__content
-    table.FileDetails__lines
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre: span.Token.Token_comment #!/usr/bin/env python
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+  .File-content.FileDetails-content
+    table.FileDetails-lines
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre: span.Token.Token_comment #!/usr/bin/env python
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           span.Token.Token_keyword import
           = ' '
           | os
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           span.Token.Token_keyword import
           = ' '
           | sys
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           span.Token.Token_keyword import
           = ' '
           | platform
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           span.Token.Token_keyword import
           = ' '
           | json
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
         td
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           | URLS = [
           span.Token.Token_string 'https://proxy.sandbox.yandex-team.ru/453818264'
           = ' '
@@ -51,52 +51,52 @@
           = ' '
           span.Token.Token_string 'http://storage-int.mds.yandex.net/get-sandbox/110738/by_platform.json.453815347'
           | ]
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           | MD5 =
           = ' '
           span.Token.Token_string '7f5a85f9c28d35c3a76d8cea7af51106'
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
         td
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre RETRIES = 5
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre HASH_PREFIX = 10
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre RETRIES = 5
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre HASH_PREFIX = 10
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
         td
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre HOME_DIR = os.path.expanduser('~')
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre HOME_DIR = os.path.expanduser('~')
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
         td
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
         td
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           span.Token.Token_keyword def
           = ' '
           span.Token.Token_method create_dirs
           | (path):
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           = '    '
           span.Token.Token_keyword try
           | :
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre         os.makedirs(path)
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre         os.makedirs(path)
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           = '    '
           span.Token.Token_keyword except
           = ' '
@@ -105,54 +105,54 @@
           span.Token.Token_keyword as
           = ' '
           | e:
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           = '        '
           span.Token.Token_keyword import
           = ' '
           | errno
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
         td
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           = '        '
           span.Token.Token_keyword if
           = ' '
           | e.errno != errno.EEXIST:
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           = '            '
           span.Token.Token_keyword raise
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
         td
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           = '    '
           span.Token.Token_keyword return
           = ' '
           | path
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
         td
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
         td
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           span.Token.Token_keyword def
           = ' '
           span.Token.Token_method misc_root
           | ():
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           = '    '
           span.Token.Token_keyword return
           = ' '
@@ -162,43 +162,43 @@
           = ' '
           span.Token.Token_string '.ya'
           | ))
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
         td
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
         td
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           span.Token.Token_keyword def
           = ' '
           span.Token.Token_method tool_root():
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
         td
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
         td
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           span.Token.Token_keyword def
           = ' '
           span.Token.Token_method create_dirs
           | (path):
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           = '    '
           span.Token.Token_keyword try
           | :
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre         os.makedirs(path)
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre         os.makedirs(path)
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           = '    '
           span.Token.Token_keyword except
           = ' '
@@ -207,34 +207,34 @@
           span.Token.Token_keyword as
           = ' '
           | e:
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           = '        '
           span.Token.Token_keyword import
           = ' '
           | errno
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
         td
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           = '        '
           span.Token.Token_keyword if
           = ' '
           | e.errno != errno.EEXIST:
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           = '            '
           span.Token.Token_keyword raise
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
         td
-      tr.FileDetails__line
-        td.FileDetails__lineNumber
-        td.FileDetails__lineContent: pre
+      tr.FileDetails-line
+        td.FileDetails-lineNumber
+        td.FileDetails-lineContent: pre
           = '    '
           span.Token.Token_keyword return
           = ' '

@@ -10,7 +10,7 @@
       transform: rotate(0);
     }
 
-    .RepositorySelector__dropdown {
+    .RepositorySelector-dropdown {
       visibility: visible;
     }
   }
@@ -40,7 +40,7 @@
     content: '';
   }
 
-  &__title {
+  &-title {
     position: relative;
     font-size: 14px;
     line-height: 18px;
@@ -55,11 +55,11 @@
     }
   }
 
-  &__label {
+  &-label {
     font-weight: 500;
   }
 
-  &__dropdown {
+  &-dropdown {
     position: absolute;
     top: 100%;
     z-index: -1;
@@ -71,7 +71,7 @@
     box-shadow: 0 4px 16px $boxShadowColor;
     visibility: hidden;
 
-    // disable box-shadow on top
+    // disabling box-shadow on top
     &:after {
       position: absolute;
       top: -17px;
@@ -84,7 +84,7 @@
     }
   }
 
-  &__repo {
+  &-repo {
     display: block;
     color: #000;
     line-height: 20px;

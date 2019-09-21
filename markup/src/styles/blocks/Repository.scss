@@ -1,39 +1,39 @@
 .Repository {
-  &__header {
+  &-header {
     padding-top: 12px;
   }
 
-  &__title {
+  &-title {
     color: $primaryTextColor;
     font-weight: 500;
     font-size: 24px;
     line-height: 28px;
   }
 
-  &__branch {
+  &-branch {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
   }
 
-  &__branchSelector {
+  &-branchSelector {
     margin-left: 4px;
   }
 
-  &__lastCommit {
+  &-lastCommit {
     color: $primaryTextColor;
     font-size: 14px;
     line-height: 20px;
   }
 
-  &__tabs {
+  &-tabs {
     margin-top: 18px;
     margin-bottom: 16px;
     border-bottom: 1px solid $mediumSeparatorColor;
   }
 
-  &__files {
-    .Table__cell {
+  &-files {
+    .Table-cell {
       &:nth-child(1) {
         flex-basis: 242px;
       }
@@ -48,7 +48,7 @@
     }
   }
 
-  &__readme {
+  &-readme {
     margin-top: 16px;
   }
 }

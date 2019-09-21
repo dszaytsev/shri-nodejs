@@ -3,7 +3,7 @@
   z-index: 10;
 
   &:hover {
-    .BranchSelector__dropdown {
+    .BranchSelector-dropdown {
       visibility: visible;
     }
   }
@@ -17,20 +17,20 @@
     height: 12px;
     margin-top: -5px;
     margin-left: 6px;
-    background-image: url('../images/arrow_up__gray.svg');
+    background-image: url('../images/arrow_up-gray.svg');
     background-repeat: no-repeat;
     background-position: center;
     transform: rotate(180deg);
     content: '';
   }
 
-  &__title {
+  &-title {
     color: $secondaryTextColor;
     font-size: 24px;
     line-height: 28px;
   }
 
-  &__dropdown {
+  &-dropdown {
     position: absolute;
     top: 100%;
     display: flex;
@@ -60,16 +60,16 @@
     }
   }
 
-  &__separator {
+  &-separator {
     margin: 4px 4px 14px;
     border-bottom: 1px solid $mediumSeparatorColor;
   }
 
-  &__branches {
+  &-branches {
     overflow: scroll;
   }
 
-  &__branch {
+  &-branch {
     padding-right: 12px;
     padding-left: 12px;
 
@@ -83,24 +83,24 @@
       color: $inverseTextColor;
       background-color: $darkBackgroundColor;
 
-      .BranchSelector__branchTitle {
+      .BranchSelector-branchTitle {
         color: #f2f2f2;
       }
 
-      .BranchSelector__commit {
+      .BranchSelector-commit {
         color: #e0e0e0;
       }
     }
   }
 
-  &__branchTitle {
+  &-branchTitle {
     margin-bottom: 2px;
     color: #434445;
     font-size: 14px;
     line-height: 20px;
   }
 
-  &__commit {
+  &-commit {
     color: $secondaryTextColor;
     font-size: 13px;
     line-height: 20px;

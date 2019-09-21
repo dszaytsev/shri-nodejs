@@ -2,31 +2,31 @@ mixin navigation(items)
   - let lastIndex = items.length - 1
   .Navigation
     each item, index in items
-      .Navigation__item(class=(lastIndex === index && 'Navigation__item_isActive'))
+      .Navigation-item(class=(lastIndex === index && 'Navigation-item_isActive'))
         = item
 
 mixin tabs(items)
   .Tabs
     each item in items
-      a.Tabs__item(href=item.href class=(item.isActive && 'Tabs__item_isActive'))= item.title
+      a.Tabs-item(href=item.href class=(item.isActive && 'Tabs-item_isActive'))= item.title
 
 mixin fileHistoryRecord(record)
   - const { title, message, hash, committer, time, avatarUrl= '../../images/avatar.svg' } = record
-  .FileHistory-Record
-    .FileHistory-Record__avatar(style=`background-image: url("${avatarUrl}")`)
-    .FileHistory-Record__info
-      .FileHistory-Record__title= title
-      .FileHistory-Record__message= message
-      .FileHistory-Record__commitBlock
-        .FileHistory-Record__hash
-          a.FileHistory-Record__commitLink.Link(href='#')= hash
-        .FileHistory-Record__committer
+  .FileHistoryRecord
+    .FileHistoryRecord-avatar(style=`background-image: url("${avatarUrl}")`)
+    .FileHistoryRecord-info
+      .FileHistoryRecord-title= title
+      .FileHistoryRecord-message= message
+      .FileHistoryRecord-commitBlock
+        .FileHistoryRecord-hash
+          a.FileHistoryRecord-commitLink.Link(href='#')= hash
+        .FileHistoryRecord-committer
           | by
           = ' '
           .Committer= committer
-        .FileHistory-Record__time= time
-    .FileHistory-Record__commit
-      a.FileHistory-Record__commitLink.Link(href='#')= hash
+        .FileHistoryRecord-time= time
+    .FileHistoryRecord-commit
+      a.FileHistoryRecord-commitLink.Link(href='#')= hash
     //- интересно, для чего это
-    .FileHistory-Record__icon
+    .FileHistoryRecord-icon
 

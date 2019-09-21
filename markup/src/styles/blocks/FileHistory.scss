@@ -1,11 +1,11 @@
 .FileHistory {
-  &__day {
+  &-day {
     & + & {
       margin-top: 16px;
     }
   }
 
-  &__date {
+  &-date {
     margin-bottom: 16px;
     color: $secondaryTextColor;
     font-weight: 500;
