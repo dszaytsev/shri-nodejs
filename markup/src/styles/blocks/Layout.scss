@@ -19,3 +19,14 @@
     }
   }
 }
+
+@include m-screen {
+  .Layout {
+    &-container {
+      width: auto;
+      margin: 0;
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+  }
+}

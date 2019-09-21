@@ -43,13 +43,19 @@
 
 @include l-screen {
   .Repository {
-    &-header {
-      align-items: flex-start;
-    }
-
     &-title {
       max-width: 780px;
       font-size: 22px;
+    }
+  }
+}
+
+@include m-screen {
+  .Repository {
+    &-title {
+      max-width: 550px;
+      font-size: 20px;
+      line-height: 24px;
     }
   }
 }

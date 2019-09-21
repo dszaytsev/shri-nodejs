@@ -81,3 +81,11 @@
     }
   }
 }
+
+@include m-screen {
+  .FileHistoryRecord {
+    &-commit {
+      flex: 0 0 100px;
+    }
+  }
+}
