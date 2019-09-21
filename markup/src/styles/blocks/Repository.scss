@@ -32,27 +32,24 @@
     border-bottom: 1px solid $mediumSeparatorColor;
   }
 
-  &-files {
-    .Table-cell {
-      &:nth-child(1) {
-        flex-basis: 242px;
-      }
-
-      &:nth-child(2) {
-        flex-basis: 258px;
-      }
-
-      &:nth-child(3) {
-        flex-basis: 476px;
-      }
-    }
-  }
-
   &-readme {
     margin-top: 16px;
   }
 
   &-content {
     margin-top: 24px;
+  }
+}
+
+@include l-screen {
+  .Repository {
+    &-header {
+      align-items: flex-start;
+    }
+
+    &-title {
+      max-width: 780px;
+      font-size: 22px;
+    }
   }
 }

@@ -4,4 +4,18 @@
     margin-right: 8px;
     vertical-align: middle;
   }
+
+  .Table-cell {
+    &:nth-child(1) {
+      flex-basis: 150px;
+    }
+
+    &:nth-child(2) {
+      flex-basis: 150px;
+    }
+
+    &:nth-child(3) {
+      flex-basis: 450px;
+    }
+  }
 }

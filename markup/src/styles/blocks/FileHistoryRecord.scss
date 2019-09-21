@@ -73,3 +73,11 @@
     background-position: center top;
   }
 }
+
+@include l-screen {
+  .FileHistoryRecord {
+    &-commit {
+      flex: 0 0 200px;
+    }
+  }
+}

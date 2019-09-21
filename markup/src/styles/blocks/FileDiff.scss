@@ -12,6 +12,7 @@
     height: 28px;
     padding-right: 16px;
     padding-left: 11px;
+    color: $ghostTextColor;
     background-color: #f1f8ff;
   }
 
@@ -36,7 +37,6 @@
 
   &-below {
     margin-right: 32px;
-    color: $ghostTextColor;
 
     &:before {
       vertical-align: baseline;
