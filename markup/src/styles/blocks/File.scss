@@ -27,4 +27,14 @@
   &-right {
     margin-left: auto;
   }
+
+  &_lang_java {
+    --comment-token-color: #008f00;
+    --keyword-token-weight: normal;
+    --keyword-token-color: #0433ff;
+    --string-token-color: #b4261a;
+    --method-token-color: #b4261a;
+    --method-token-weight: normal;
+    --data-type-token-color: #b4261a;
+  }
 }

@@ -1,0 +1,93 @@
+.FileDiff {
+  &-content {
+    font-size: 12px;
+    font-family: 'PT Mono', monospace;
+    line-height: 20px;
+  }
+
+  &-hidden {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 28px;
+    padding-right: 16px;
+    padding-left: 11px;
+    background-color: #f1f8ff;
+  }
+
+  &-hiddenLines {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    transform: translateX(-50%);
+  }
+
+  &-below,
+  &-above {
+    &:before {
+      display: inline-block;
+      width: 8px;
+      height: 13px;
+      margin-right: 8px;
+      background-repeat: no-repeat;
+      content: '';
+    }
+  }
+
+  &-below {
+    margin-right: 32px;
+    color: $ghostTextColor;
+
+    &:before {
+      vertical-align: baseline;
+      background-image: url('../images/hidden_line_arrow_gray.svg');
+      background-position: bottom;
+    }
+  }
+
+  &-above {
+    color: $primaryTextColor;
+
+    &:before {
+      vertical-align: middle;
+      background-image: url('../images/hidden_line_arrow_black.svg');
+    }
+  }
+
+  &-changes {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    td {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &-line {
+    &_addition {
+      background-color: #e6ffed;
+    }
+
+    &_subtraction {
+      background-color: #ffeef0;
+    }
+  }
+
+  &-prevNumber,
+  &-currentNumber {
+    width: 42px;
+    text-align: right;
+  }
+
+  &-lineContent {
+    padding-left: 28px;
+
+    pre {
+      margin: 0;
+      padding: 0;
+      font-family: 'PT Mono', monospace;
+    }
+  }
+}
