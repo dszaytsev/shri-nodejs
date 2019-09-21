@@ -5,10 +5,32 @@
     align-items: flex-start;
   }
 
-  &-showFiles {
+  &-actions {
     display: flex;
     align-items: center;
     margin-left: auto;
+  }
+
+  &-back {
+    display: none;
+    color: $secondaryTextColor;
+
+    &:before {
+      display: inline-block;
+      width: 9px;
+      height: 18px;
+      margin-right: 6px;
+      vertical-align: bottom;
+      background-image: url('../images/arrow_left_gray.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      content: '';
+    }
+  }
+
+  &-showFiles {
+    display: flex;
+    align-items: center;
     padding: 7px 12px 6px;
     font-size: 13px;
     line-height: 15px;
@@ -30,5 +52,24 @@
   &-author {
     flex-basis: 100%;
     margin-top: 5px;
+  }
+}
+
+@include s-screen {
+  .Commit {
+    &-back {
+      display: block;
+    }
+
+    &-actions {
+      flex: 100%;
+      order: -1;
+      margin-bottom: 12px;
+      margin-left: 0;
+    }
+
+    &-showFiles {
+      margin-left: auto;
+    }
   }
 }

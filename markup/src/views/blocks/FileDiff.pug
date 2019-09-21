@@ -1,10 +1,15 @@
 .FileDiff.File.File_lang_java
   .File-header.FileDiff-header
-    .FileDiff-state.FileDiff-state_modified
-    .File-icon.FileIcon.FileIcon_file
-    .File-title /trunk/arcadia/devtools/intellij/src/main/java/ru/yandex/devtools/intellij/arc/client/ArcCli.java
+    .FileDiff-left
+      .FileDiff-state.FileDiff-state_modified
+      .File-icon.FileIcon.FileIcon_file
+      .File-title /trunk/arcadia/devtools/intellij/src/main/java/ru/yandex/devtools/intellij/arc/client/ArcCli.java
 
-    .File-right
+    .File-right.FileDiff-right
+      .FileDiff-total
+        span.FileDiff-additions +100
+        span.FileDiff-substractions -81
+      a.FileDiff-link(href='#')
 
   .File-content.FileDiff-content
     .FileDiff-hidden
@@ -13,190 +18,191 @@
         .FileDiff-hiddenLine.FileDiff-below 20 lines
         .FileDiff-hiddenLine.FileDiff-above 20 lines
 
-    table.FileDiff-changes
-      tr.FileDiff-line
-        td.FileDiff-prevNumber 1
-        td.FileDiff-currentNumber 1
-        td.FileDiff-lineContent: pre package ru.yandex.devtools.intellij.arc.client;
-      tr.FileDiff-line
-        td.FileDiff-prevNumber 2
-        td.FileDiff-currentNumber 2
-        td.FileDiff-lineContent: pre
-      tr.FileDiff-line.FileDiff-line_addition
-        td.FileDiff-prevNumber
-        td.FileDiff-currentNumber 3
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | java.util.ArrayList;
-      tr.FileDiff-line.FileDiff-line_addition
-        td.FileDiff-prevNumber
-        td.FileDiff-currentNumber 4
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | java.util.Collection;
-      tr.FileDiff-line.FileDiff-line_addition
-        td.FileDiff-prevNumber
-        td.FileDiff-currentNumber 5
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | java.util.List;
-      tr.FileDiff-line.FileDiff-line_addition
-        td.FileDiff-prevNumber
-        td.FileDiff-currentNumber 6
-        td.FileDiff-lineContent: pre
-      tr.FileDiff-line
-        td.FileDiff-prevNumber 3
-        td.FileDiff-currentNumber 7
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | com.intellij.openapi.diagnostic.Logger;
-      tr.FileDiff-line.FileDiff-line_addition
-        td.FileDiff-prevNumber
-        td.FileDiff-currentNumber 8
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | com.intellij.openapi.project.Project;
-      tr.FileDiff-line
-        td.FileDiff-prevNumber 4
-        td.FileDiff-currentNumber 9
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | com.intellij.openapi.vcs.FilePath;
-      tr.FileDiff-line
-        td.FileDiff-prevNumber 5
-        td.FileDiff-currentNumber 10
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | com.intellij.openapi.vcs.VcsException;
-      tr.FileDiff-line
-        td.FileDiff-prevNumber 6
-        td.FileDiff-currentNumber 11
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | com.intellij.openapi.vfs.VirtualFile;
-      tr.FileDiff-line
-        td.FileDiff-prevNumber 7
-        td.FileDiff-currentNumber 12
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | com.intellij.vcsUtil.VcsUtil;
-      tr.FileDiff-line.FileDiff-line_addition
-        td.FileDiff-prevNumber
-        td.FileDiff-currentNumber 13
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | org.jetbrains.annotations.NotNull;
-      tr.FileDiff-line.FileDiff-line_addition
-        td.FileDiff-prevNumber
-        td.FileDiff-currentNumber 14
-        td.FileDiff-lineContent: pre
-      tr.FileDiff-line
-        td.FileDiff-prevNumber 8
-        td.FileDiff-currentNumber 15
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | ru.yandex.devtools.intellij.arc.ArcContext;
-      tr.FileDiff-line
-        td.FileDiff-prevNumber 9
-        td.FileDiff-currentNumber 16
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | ru.yandex.devtools.intellij.arc.ArcRevisionNumber;
-      tr.FileDiff-line
-        td.FileDiff-prevNumber  10
-        td.FileDiff-currentNumber 17
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | ru.yandex.devtools.intellij.arc.ArcStatus;
-      tr.FileDiff-line.FileDiff-line_addition
-        td.FileDiff-prevNumber
-        td.FileDiff-currentNumber 18
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | ru.yandex.devtools.intellij.arc.ui.ArcResetDialog;
-      tr.FileDiff-line
-        td.FileDiff-prevNumber 11
-        td.FileDiff-currentNumber 19
-        td.FileDiff-lineContent: pre
-      tr.FileDiff-line.FileDiff-line_subtraction
-        td.FileDiff-prevNumber 12
-        td.FileDiff-currentNumber
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | java.util.ArrayList;
-      tr.FileDiff-line.FileDiff-line_subtraction
-        td.FileDiff-prevNumber 13
-        td.FileDiff-currentNumber
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | java.util.Collection;
-      tr.FileDiff-line.FileDiff-line_subtraction
-        td.FileDiff-prevNumber 14
-        td.FileDiff-currentNumber
-        td.FileDiff-lineContent: pre
-          span.Token.Token_keyword import
-          = ' '
-          | java.util.List;
-      tr.FileDiff-line.FileDiff-line_subtraction
-        td.FileDiff-prevNumber 15
-        td.FileDiff-currentNumber
-        td.FileDiff-lineContent: pre
-      tr.FileDiff-line.FileDiff-line
-        td.FileDiff-prevNumber 16
-        td.FileDiff-currentNumber 20
-        td.FileDiff-lineContent: pre: span.Token.Token_comment /**
-      tr.FileDiff-line.FileDiff-line
-        td.FileDiff-prevNumber 17
-        td.FileDiff-currentNumber 21
-        td.FileDiff-lineContent: pre
-          = '    '
-          span.Token.Token_comment * @author Dmitry Andreev <a href="mailto:AndreevDm@yandex-team.ru"></a>
-      tr.FileDiff-line.FileDiff-line
-        td.FileDiff-prevNumber
-        td.FileDiff-currentNumber 22
-        td.FileDiff-lineContent: pre
-          = '    '
-          span.Token.Token_comment * @date 11/10/2018
-      tr.FileDiff-line.FileDiff-line
-        td.FileDiff-prevNumber 18
-        td.FileDiff-currentNumber 23
-        td.FileDiff-lineContent: pre: span.Token.Token_comment */
-      tr.FileDiff-line.FileDiff-line
-        td.FileDiff-prevNumber 19
-        td.FileDiff-currentNumber 24
-        td.FileDiff-lineContent: pre
-          = '    '
-          span.Token.Token_keyword public
-          = ' '
-          span.Token.Token_method ArcCli
-          | (
-          span.Token.Token_dataType String
-          = ' '
-          | arcBinaryPath) {
-      tr.FileDiff-line.FileDiff-line
-        td.FileDiff-prevNumber 20
-        td.FileDiff-currentNumber 25
-        td.FileDiff-lineContent: pre         this.arcBinaryPath = arcBinaryPath;
-      tr.FileDiff-line.FileDiff-line
-        td.FileDiff-prevNumber 21
-        td.FileDiff-currentNumber 26
-        td.FileDiff-lineContent: pre    }
+    .FileDiff-changes
+      table.FileDiff-table
+        tr.FileDiff-line
+          td.FileDiff-prevNumber 1
+          td.FileDiff-currentNumber 1
+          td.FileDiff-lineContent: pre package ru.yandex.devtools.intellij.arc.client;
+        tr.FileDiff-line
+          td.FileDiff-prevNumber 2
+          td.FileDiff-currentNumber 2
+          td.FileDiff-lineContent: pre
+        tr.FileDiff-line.FileDiff-line_addition
+          td.FileDiff-prevNumber
+          td.FileDiff-currentNumber 3
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | java.util.ArrayList;
+        tr.FileDiff-line.FileDiff-line_addition
+          td.FileDiff-prevNumber
+          td.FileDiff-currentNumber 4
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | java.util.Collection;
+        tr.FileDiff-line.FileDiff-line_addition
+          td.FileDiff-prevNumber
+          td.FileDiff-currentNumber 5
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | java.util.List;
+        tr.FileDiff-line.FileDiff-line_addition
+          td.FileDiff-prevNumber
+          td.FileDiff-currentNumber 6
+          td.FileDiff-lineContent: pre
+        tr.FileDiff-line
+          td.FileDiff-prevNumber 3
+          td.FileDiff-currentNumber 7
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | com.intellij.openapi.diagnostic.Logger;
+        tr.FileDiff-line.FileDiff-line_addition
+          td.FileDiff-prevNumber
+          td.FileDiff-currentNumber 8
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | com.intellij.openapi.project.Project;
+        tr.FileDiff-line
+          td.FileDiff-prevNumber 4
+          td.FileDiff-currentNumber 9
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | com.intellij.openapi.vcs.FilePath;
+        tr.FileDiff-line
+          td.FileDiff-prevNumber 5
+          td.FileDiff-currentNumber 10
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | com.intellij.openapi.vcs.VcsException;
+        tr.FileDiff-line
+          td.FileDiff-prevNumber 6
+          td.FileDiff-currentNumber 11
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | com.intellij.openapi.vfs.VirtualFile;
+        tr.FileDiff-line
+          td.FileDiff-prevNumber 7
+          td.FileDiff-currentNumber 12
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | com.intellij.vcsUtil.VcsUtil;
+        tr.FileDiff-line.FileDiff-line_addition
+          td.FileDiff-prevNumber
+          td.FileDiff-currentNumber 13
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | org.jetbrains.annotations.NotNull;
+        tr.FileDiff-line.FileDiff-line_addition
+          td.FileDiff-prevNumber
+          td.FileDiff-currentNumber 14
+          td.FileDiff-lineContent: pre
+        tr.FileDiff-line
+          td.FileDiff-prevNumber 8
+          td.FileDiff-currentNumber 15
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | ru.yandex.devtools.intellij.arc.ArcContext;
+        tr.FileDiff-line
+          td.FileDiff-prevNumber 9
+          td.FileDiff-currentNumber 16
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | ru.yandex.devtools.intellij.arc.ArcRevisionNumber;
+        tr.FileDiff-line
+          td.FileDiff-prevNumber  10
+          td.FileDiff-currentNumber 17
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | ru.yandex.devtools.intellij.arc.ArcStatus;
+        tr.FileDiff-line.FileDiff-line_addition
+          td.FileDiff-prevNumber
+          td.FileDiff-currentNumber 18
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | ru.yandex.devtools.intellij.arc.ui.ArcResetDialog;
+        tr.FileDiff-line
+          td.FileDiff-prevNumber 11
+          td.FileDiff-currentNumber 19
+          td.FileDiff-lineContent: pre
+        tr.FileDiff-line.FileDiff-line_subtraction
+          td.FileDiff-prevNumber 12
+          td.FileDiff-currentNumber
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | java.util.ArrayList;
+        tr.FileDiff-line.FileDiff-line_subtraction
+          td.FileDiff-prevNumber 13
+          td.FileDiff-currentNumber
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | java.util.Collection;
+        tr.FileDiff-line.FileDiff-line_subtraction
+          td.FileDiff-prevNumber 14
+          td.FileDiff-currentNumber
+          td.FileDiff-lineContent: pre
+            span.Token.Token_keyword import
+            = ' '
+            | java.util.List;
+        tr.FileDiff-line.FileDiff-line_subtraction
+          td.FileDiff-prevNumber 15
+          td.FileDiff-currentNumber
+          td.FileDiff-lineContent: pre
+        tr.FileDiff-line.FileDiff-line
+          td.FileDiff-prevNumber 16
+          td.FileDiff-currentNumber 20
+          td.FileDiff-lineContent: pre: span.Token.Token_comment /**
+        tr.FileDiff-line.FileDiff-line
+          td.FileDiff-prevNumber 17
+          td.FileDiff-currentNumber 21
+          td.FileDiff-lineContent: pre
+            = '    '
+            span.Token.Token_comment * @author Dmitry Andreev <a href="mailto:AndreevDm@yandex-team.ru"></a>
+        tr.FileDiff-line.FileDiff-line
+          td.FileDiff-prevNumber
+          td.FileDiff-currentNumber 22
+          td.FileDiff-lineContent: pre
+            = '    '
+            span.Token.Token_comment * @date 11/10/2018
+        tr.FileDiff-line.FileDiff-line
+          td.FileDiff-prevNumber 18
+          td.FileDiff-currentNumber 23
+          td.FileDiff-lineContent: pre: span.Token.Token_comment */
+        tr.FileDiff-line.FileDiff-line
+          td.FileDiff-prevNumber 19
+          td.FileDiff-currentNumber 24
+          td.FileDiff-lineContent: pre
+            = '    '
+            span.Token.Token_keyword public
+            = ' '
+            span.Token.Token_method ArcCli
+            | (
+            span.Token.Token_dataType String
+            = ' '
+            | arcBinaryPath) {
+        tr.FileDiff-line.FileDiff-line
+          td.FileDiff-prevNumber 20
+          td.FileDiff-currentNumber 25
+          td.FileDiff-lineContent: pre         this.arcBinaryPath = arcBinaryPath;
+        tr.FileDiff-line.FileDiff-line
+          td.FileDiff-prevNumber 21
+          td.FileDiff-currentNumber 26
+          td.FileDiff-lineContent: pre    }
 
     .FileDiff-hidden
       .FileDiff-hiddenPositions @@ -270, 160  +270, 161 @@

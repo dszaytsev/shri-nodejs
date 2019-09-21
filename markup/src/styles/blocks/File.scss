@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     padding: 12px 16px;
+    overflow: hidden;
     font-size: 14px;
     line-height: 20px;
     background-color: #f5f5f5;
@@ -22,6 +23,11 @@
       height: 20px;
       background-image: url('../images/icon_file.svg');
     }
+  }
+
+  &-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &-right {
@@ -42,5 +48,6 @@
 @include s-screen {
   .File {
     margin: 0 -16px;
+    border-radius: 0;
   }
 }
