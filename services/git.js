@@ -22,6 +22,7 @@ exports.diff = (path, commit = '') => git(`diff ${commit}`,
   (data, acc) => acc += data
 )
 
+// git ls-tree HEAD --name-only | xargs -n1 git log HEAD -n 1 --pretty=oneline
 exports.tree = (path, commitHash = '') => git(`ls-tree --name-only -r ${commitHash}`,
   { path, acc: [] },
   (data, acc) => {
