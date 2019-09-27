@@ -1,25 +1,27 @@
 .Table.RepositoryFiles
-  .Table-row.Table-row_head
-    .Table-cell Name
-    .Table-cell Last commit
-    .Table-cell Commit message
-    .Table-cell Committer
-    .Table-cell Updated
+  dib
+    .Table-row.Table-row_head
+      .Table-cell Name
+      .Table-cell Last commit
+      .Table-cell Commit message
+      .Table-cell Committer
+      .Table-cell Updated
 
-  .Table-row
-    .Table-cell
-      .RepositoryFiles-icon: .FileIcon.FileIcon_folder
-      | api
-    .Table-cell: a.Link(href='#') d53dsv
-    .Table-cell [vcs] move http to arc
-    .Table-cell: .Committer noxoomo
-    .Table-cell 4 s ago
+  div(data-el='Index/files')
+    .Table-row
+      .Table-cell
+        .RepositoryFiles-icon: .FileIcon.FileIcon_folder
+        | api
+      .Table-cell: a.Link(href='#') d53dsv
+      .Table-cell [vcs] move http to arc
+      .Table-cell: .Committer noxoomo
+      .Table-cell 4 s ago
 
-  .Table-row
-    .Table-cell
-      .RepositoryFiles-icon: .FileIcon.FileIcon_folder
-      | ci
-    .Table-cell: a.Link(href='#') d53dsv
-    .Table-cell [vcs] test for empty commit message
-    .Table-cell: .Committer nikitxskv
-    .Table-cell 1 min ago
+    .Table-row
+      .Table-cell
+        .RepositoryFiles-icon: .FileIcon.FileIcon_folder
+        | ci
+      .Table-cell: a.Link(href='#') d53dsv
+      .Table-cell [vcs] test for empty commit message
+      .Table-cell: .Committer nikitxskv
+      .Table-cell 1 min ago

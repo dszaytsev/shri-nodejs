@@ -10,7 +10,9 @@ const pathToRepos = path.resolve(pathArg)
 
 const app = express()
 
-const bundler = new Bundler('client/index.js', {
+const assetEntries = ['app.js', 'styles/styles.scss'].map(entry => path.join(__dirname, 'client', entry))
+
+const bundler = new Bundler(assetEntries, {
   outDir: 'public/assets'
 })
 app.use(bundler.middleware())

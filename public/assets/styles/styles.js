@@ -184,16 +184,12 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/styles/index.scss":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"styles/styles.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./../images/arrow_up_gray.svg":[["arrow_up_gray.b03bf31b.svg","src/images/arrow_up_gray.svg"],"src/images/arrow_up_gray.svg"],"./../images/arrow_left_gray.svg":[["arrow_left_gray.72d42d61.svg","src/images/arrow_left_gray.svg"],"src/images/arrow_left_gray.svg"],"./../images/burger.svg":[["burger.1d058982.svg","src/images/burger.svg"],"src/images/burger.svg"],"./../images/icon_file.svg":[["icon_file.14099e38.svg","src/images/icon_file.svg"],"src/images/icon_file.svg"],"./../images/icon_download.svg":[["icon_download.cf01fb66.svg","src/images/icon_download.svg"],"src/images/icon_download.svg"],"./../images/icon_folder.svg":[["icon_folder.c5e8f5fd.svg","src/images/icon_folder.svg"],"src/images/icon_folder.svg"],"./../images/icon_markup.svg":[["icon_markup.90ecfd6b.svg","src/images/icon_markup.svg"],"src/images/icon_markup.svg"],"./../images/icon_branch.svg":[["icon_branch.66469d90.svg","src/images/icon_branch.svg"],"src/images/icon_branch.svg"],"./../images/link.svg":[["link.eadf570c.svg","src/images/link.svg"],"src/images/link.svg"],"./../images/hidden_line_arrow_gray.svg":[["hidden_line_arrow_gray.f154ec80.svg","src/images/hidden_line_arrow_gray.svg"],"src/images/hidden_line_arrow_gray.svg"],"./../images/hidden_line_arrow_black.svg":[["hidden_line_arrow_black.36e857dd.svg","src/images/hidden_line_arrow_black.svg"],"src/images/hidden_line_arrow_black.svg"],"./../images/icon_markup_empty.svg":[["icon_markup_empty.3d5d9e2d.svg","src/images/icon_markup_empty.svg"],"src/images/icon_markup_empty.svg"],"./../images/arrow_up.svg":[["arrow_up.9bf0023f.svg","src/images/arrow_up.svg"],"src/images/arrow_up.svg"],"./../images/arrow_right_gray.svg":[["arrow_right_gray.d6c12931.svg","src/images/arrow_right_gray.svg"],"src/images/arrow_right_gray.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-require("./src/styles/index.scss");
-},{"./src/styles/index.scss":"src/styles/index.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./../images/arrow_up_gray.svg":[["../arrow_up_gray.d1ae2302.svg","images/arrow_up_gray.svg"],"images/arrow_up_gray.svg"],"./../images/arrow_left_gray.svg":[["../arrow_left_gray.f9e6540a.svg","images/arrow_left_gray.svg"],"images/arrow_left_gray.svg"],"./../images/burger.svg":[["../burger.fd086f28.svg","images/burger.svg"],"images/burger.svg"],"./../images/icon_file.svg":[["../icon_file.42acadb6.svg","images/icon_file.svg"],"images/icon_file.svg"],"./../images/icon_download.svg":[["../icon_download.bcd2eceb.svg","images/icon_download.svg"],"images/icon_download.svg"],"./../images/icon_folder.svg":[["../icon_folder.09c5448d.svg","images/icon_folder.svg"],"images/icon_folder.svg"],"./../images/icon_markup.svg":[["../icon_markup.8da90ee7.svg","images/icon_markup.svg"],"images/icon_markup.svg"],"./../images/icon_branch.svg":[["../icon_branch.4b9c5958.svg","images/icon_branch.svg"],"images/icon_branch.svg"],"./../images/link.svg":[["../link.1531401f.svg","images/link.svg"],"images/link.svg"],"./../images/hidden_line_arrow_gray.svg":[["../hidden_line_arrow_gray.b0a04a00.svg","images/hidden_line_arrow_gray.svg"],"images/hidden_line_arrow_gray.svg"],"./../images/hidden_line_arrow_black.svg":[["../hidden_line_arrow_black.4972cc1d.svg","images/hidden_line_arrow_black.svg"],"images/hidden_line_arrow_black.svg"],"./../images/icon_markup_empty.svg":[["../icon_markup_empty.49517c0c.svg","images/icon_markup_empty.svg"],"images/icon_markup_empty.svg"],"./../images/arrow_up.svg":[["../arrow_up.28ab567a.svg","images/arrow_up.svg"],"images/arrow_up.svg"],"./../images/arrow_right_gray.svg":[["../arrow_right_gray.b0e92884.svg","images/arrow_right_gray.svg"],"images/arrow_right_gray.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -221,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55369" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53482" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -396,5 +392,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/index.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/styles/styles.js.map

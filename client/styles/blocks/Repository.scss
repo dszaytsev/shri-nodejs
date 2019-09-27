@@ -32,6 +32,30 @@
     border-bottom: 1px solid $mediumSeparatorColor;
   }
 
+  &-search {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 0 8px 8px;
+    color: $secondaryTextColor;
+    font-size: 14px;
+    line-height: 20px;
+    border: none;
+    border-bottom: 1px solid $mediumSeparatorColor;
+
+    &::placeholder {
+      color: $grayColor400;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &:focus {
+      border-bottom-color: $grayColor400;
+      outline: none;
+    }
+  }
+
   &-readme {
     margin-top: 16px;
   }
