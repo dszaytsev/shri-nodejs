@@ -7,11 +7,16 @@
     "body-parser": "^1.19.0",
     "eslint": "^6.3.0",
     "express": "^4.17.1",
+    "logo.svg": "^1.0.1",
     "lowdb": "^1.0.0",
     "mime-types": "^2.1.24",
+    "parcel-bundler": "^1.12.3",
     "stylelint": "^11.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "pug": "^2.0.4",
+    "sass": "^1.22.12"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

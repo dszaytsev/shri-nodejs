@@ -11,7 +11,7 @@ mixin tabs(items)
       a.Tabs-item(href=item.href class=(item.isActive && 'Tabs-item_isActive'))= item.title
 
 mixin fileHistoryRecord(record)
-  - const { title, message, hash, committer, time, avatarUrl= '../../images/avatar.svg' } = record
+  - const { title, message, hash, committer, time, avatarUrl= 'avatar.716304c4.svg' } = record
   .FileHistoryRecord
     .FileHistoryRecord-avatar(style=`background-image: url("${avatarUrl}")`)
     .FileHistoryRecord-info
