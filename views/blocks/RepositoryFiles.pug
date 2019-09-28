@@ -1,0 +1,27 @@
+.Table.RepositoryFiles
+  div.RepositoryFiles-Head
+    .Table-row.Table-row_head
+      .Table-cell Name
+      .Table-cell Last commit
+      .Table-cell Commit message
+      .Table-cell Committer
+      .Table-cell Updated
+
+  div(data-component='Files')
+    .Table-row
+      .Table-cell
+        .RepositoryFiles-icon: .FileIcon.FileIcon_folder
+        | api
+      .Table-cell: a.Link(href='#') d53dsv
+      .Table-cell [vcs] move http to arc
+      .Table-cell: .Committer noxoomo
+      .Table-cell 4 s ago
+
+    .Table-row
+      .Table-cell
+        .RepositoryFiles-icon: .FileIcon.FileIcon_folder
+        | ci
+      .Table-cell: a.Link(href='#') d53dsv
+      .Table-cell [vcs] test for empty commit message
+      .Table-cell: .Committer nikitxskv
+      .Table-cell 1 min ago

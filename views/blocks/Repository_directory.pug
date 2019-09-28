@@ -1,0 +1,30 @@
+.Repository
+  .Repository-header
+    .Repository-branch
+      .Repository-title arcadia
+
+      .Repository-branchSelector
+        include ../blocks/BranchSelector
+
+    .Repository-lastCommit
+      | Last commit
+      = ' '
+      a.Link(href='#') c4d248
+      = ' '
+      | on
+      = ' '
+      a.Link(href='#') 20 Oct 2017, 12:24
+      = ' '
+      | by
+      = ' '
+      span.Committer robot-srch-releaser
+
+  .Repository-tabs
+    +tabs([{ title: 'Files', href: '#', isActive: true }, { title: 'Branches', href: '#' }])
+
+  .Repository-files
+    include ../blocks/RepositoryFiles
+
+  .Repository-readme
+    include ../blocks/Readme
+

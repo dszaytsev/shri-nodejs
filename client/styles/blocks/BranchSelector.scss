@@ -1,0 +1,196 @@
+.BranchSelector {
+  @media (min-width: 769px) {
+    &:hover {
+      &:before {
+        transform: rotate(0);
+      }
+
+      .BranchSelector-dropdown {
+        visibility: visible;
+      }
+    }
+  }
+
+  position: relative;
+  z-index: 10;
+
+  &:before {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    display: block;
+    width: 13px;
+    height: 12px;
+    margin-top: -5px;
+    margin-left: 6px;
+    background-image: url('../images/arrow_up_gray.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(180deg);
+    content: '';
+  }
+
+  &-title {
+    color: $secondaryTextColor;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &-dropdown {
+    position: absolute;
+    top: 100%;
+    box-shadow: 0 4px 16px $boxShadowColor;
+    visibility: hidden;
+
+    &:after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 17px;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.0001) 2.11%,
+        #fff 99.54%
+      );
+      content: '';
+    }
+  }
+
+  &-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 320px;
+    height: 360px;
+    padding: 4px 0 5px;
+    overflow: hidden;
+    background-color: $backgroundColor;
+    border-radius: 5px;
+  }
+
+  &-hideControl {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    display: none;
+    width: 42px;
+    height: 4px;
+    margin-left: -21px;
+    background-color: $grayColor200;
+    border-radius: 10px;
+  }
+
+  &-separator {
+    margin: 4px 4px 14px;
+    border-bottom: 1px solid $mediumSeparatorColor;
+  }
+
+  &-branches {
+    overflow: scroll;
+  }
+
+  &-branch {
+    padding-right: 12px;
+    padding-left: 12px;
+
+    & + & {
+      margin-top: 16px;
+    }
+
+    &_current {
+      padding-top: 10px;
+      padding-bottom: 6px;
+      color: $inverseTextColor;
+      background-color: $darkBackgroundColor;
+
+      .BranchSelector-branchTitle {
+        color: #f2f2f2;
+      }
+
+      .BranchSelector-commit {
+        color: #e0e0e0;
+      }
+    }
+  }
+
+  &-branchTitle {
+    margin-bottom: 2px;
+    color: #434445;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &-commit {
+    color: $secondaryTextColor;
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+@include l-screen {
+  .BranchSelector {
+    &-title {
+      max-width: 780px;
+      font-size: 22px;
+    }
+  }
+}
+
+@include m-screen {
+  .BranchSelector {
+    &-title {
+      max-width: 550px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+}
+
+@include s-screen {
+  .BranchSelector {
+  }
+}
+
+@include s-screen {
+  .BranchSelector {
+    z-index: 20;
+
+    &_isActive {
+      .BranchSelector-dropdown {
+        visibility: visible;
+      }
+    }
+
+    &-dropdown {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-end;
+      margin: 0;
+      margin-top: 0;
+      padding: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &-container {
+      box-sizing: border-box;
+      width: 100%;
+      height: 320px;
+      padding-top: 24px;
+      background: $backgroundColor;
+      background-color: #fff;
+      border-radius: 10px 10px 0 0;
+    }
+
+    &-hideControl {
+      display: block;
+    }
+  }
+}

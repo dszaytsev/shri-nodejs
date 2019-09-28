@@ -1,0 +1,32 @@
+.Layout {
+  display: flex;
+  flex-direction: column;
+
+  &-content {
+    flex: 1;
+  }
+
+  &-container {
+    width: 1376px;
+    margin: 0 auto;
+  }
+}
+
+@include l-screen {
+  .Layout {
+    &-container {
+      width: 960px;
+    }
+  }
+}
+
+@include m-screen {
+  .Layout {
+    &-container {
+      width: auto;
+      margin: 0;
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+  }
+}

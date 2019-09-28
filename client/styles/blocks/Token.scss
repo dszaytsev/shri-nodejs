@@ -1,0 +1,23 @@
+.Token {
+  &_comment {
+    color: var(--comment-token-color, $secondaryTextColor);
+  }
+
+  &_keyword {
+    color: var(--keyword-token-color);
+    font-weight: var(--keyword-token-weight, bold);
+  }
+
+  &_string {
+    color: var(--string-token-color, $blueColor);
+  }
+
+  &_method {
+    color: var(--method-token-color, $blueColor);
+    font-weight: var(--method-token-weight, bold);
+  }
+
+  &_dataType {
+    color: var(--data-type-token-color);
+  }
+}

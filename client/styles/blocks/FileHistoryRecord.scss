@@ -1,0 +1,109 @@
+.FileHistoryRecord {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+
+  &:not(:last-child) {
+    margin-bottom: 2px;
+    padding-bottom: 12px;
+
+    &:after {
+      position: absolute;
+      top: 42px;
+      bottom: 0;
+      left: 19px;
+      display: block;
+      width: 2px;
+      background-color: $grayColor400;
+      border-radius: 10px;
+      content: '';
+    }
+  }
+
+  &-avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+  }
+
+  &-info {
+    flex: 1;
+    padding-right: 12px;
+  }
+
+  &-title {
+    margin-bottom: 2px;
+    color: $primaryTextColor;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &-message {
+    margin-bottom: 4px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  &-commitBlock {
+    display: flex;
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  &-hash {
+    margin-right: 8px;
+  }
+
+  &-commitLink {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  &-commit {
+    flex: 0 0 270px;
+    padding-right: 8px;
+  }
+
+  &-icon {
+    width: 16px;
+    height: 20px;
+    background-image: url('../images/icon_markup_empty.svg');
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+}
+
+@include l-screen {
+  .FileHistoryRecord {
+    &-commit {
+      flex: 0 0 200px;
+    }
+  }
+}
+
+@include m-screen {
+  .FileHistoryRecord {
+    &-commit {
+      flex: 0 0 100px;
+    }
+  }
+}
+
+@include s-screen {
+  .FileHistoryRecord {
+    &-commit {
+      display: none;
+    }
+
+    &-info {
+      padding-right: 0;
+    }
+
+    &-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

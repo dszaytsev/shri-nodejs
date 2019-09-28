@@ -1,0 +1,31 @@
+.Readme {
+  &-content {
+    max-width: 1128px;
+    padding: 24px 32px;
+  }
+
+  &-h1 {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &-p {
+    font-size: 14px;
+    line-height: 18px;
+    word-wrap: break-word;
+
+    & + & {
+      margin-top: 20px;
+    }
+  }
+}
+
+@include s-screen {
+  .Readme {
+    &-content {
+      padding-top: 15px;
+    }
+  }
+}

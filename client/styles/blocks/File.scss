@@ -1,0 +1,53 @@
+.File {
+  overflow: hidden;
+  border: 1px solid $mediumSeparatorColor;
+  border-radius: 5px;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid $mediumSeparatorColor;
+  }
+
+  &-icon {
+    margin-right: 12px;
+    background-position: center;
+
+    &_type_file {
+      width: 9px;
+      height: 20px;
+      background-image: url('../images/icon_file.svg');
+    }
+  }
+
+  &-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-right {
+    margin-left: auto;
+  }
+
+  &_lang_java {
+    --comment-token-color: #008f00;
+    --keyword-token-weight: normal;
+    --keyword-token-color: #0433ff;
+    --string-token-color: #b4261a;
+    --method-token-color: #b4261a;
+    --method-token-weight: normal;
+    --data-type-token-color: #b4261a;
+  }
+}
+
+@include s-screen {
+  .File {
+    margin: 0 -16px;
+    border-radius: 0;
+  }
+}

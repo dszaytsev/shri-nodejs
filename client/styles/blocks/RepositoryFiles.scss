@@ -1,0 +1,85 @@
+// зря я подвязался на ячейки :c
+// *TODO: навешать классы элементов к нужным ячейкам | Created at: 21.Sep.2019
+.RepositoryFiles {
+  &-icon {
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  .Table-cell {
+    &:nth-child(1) {
+      flex-basis: 242px;
+    }
+
+    &:nth-child(2) {
+      flex-basis: 258px;
+    }
+
+    &:nth-child(3) {
+      flex-basis: 476px;
+    }
+  }
+}
+
+@include l-screen {
+  .RepositoryFiles {
+    .Table-cell {
+      &:nth-child(1) {
+        flex-basis: 150px;
+      }
+
+      &:nth-child(2) {
+        flex-basis: 150px;
+      }
+
+      &:nth-child(3) {
+        flex-basis: 450px;
+      }
+    }
+  }
+}
+
+@include m-screen {
+  .RepositoryFiles {
+    .Table-cell {
+      &:nth-child(4) {
+        flex: 0 0 100px;
+      }
+
+      &:nth-child(5) {
+        flex: 0 0 90px;
+      }
+    }
+  }
+}
+
+@include s-screen {
+  .RepositoryFiles {
+    .Table-cell {
+      &:nth-child(1),
+      &:nth-child(3) {
+        flex: 0 0 100%;
+        order: 1;
+        margin-bottom: 10px;
+      }
+
+      &:nth-child(2),
+      &:nth-child(4),
+      &:nth-child(5) {
+        flex: 0 1 auto;
+        order: 2;
+      }
+
+      &:nth-child(2) {
+        margin-right: 8px;
+      }
+
+      &:nth-child(5) {
+        &:before {
+          content: ', ';
+        }
+      }
+    }
+  }
+}

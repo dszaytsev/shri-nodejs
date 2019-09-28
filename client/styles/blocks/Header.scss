@@ -1,0 +1,43 @@
+.Header {
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+  height: 56px;
+  border-bottom: 1px solid $lightSeparatorColor;
+
+  &-container {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    color: $primaryTextColor;
+    background-repeat: no-repeat;
+  }
+
+  &-link {
+    display: block;
+    width: 118px;
+    height: 20px;
+    background-image: url('../images/logo.svg');
+    background-repeat: no-repeat;
+  }
+
+  &-repo {
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+@include s-screen {
+  .Header {
+    height: 60px;
+
+    &-logo {
+      margin-right: 26px;
+    }
+  }
+}

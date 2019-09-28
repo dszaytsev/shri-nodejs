@@ -1,0 +1,20 @@
+.FileIcon {
+  @each $icon in folder file markup branch {
+    &_#{$icon}:before {
+      background-image: url('../images/icon_#{$icon}.svg');
+    }
+  }
+
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+
+  &:before {
+    display: block;
+    width: 12px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    content: '';
+  }
+}

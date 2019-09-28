@@ -1,0 +1,35 @@
+.Navigation {
+  display: flex;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $mediumSeparatorColor;
+
+  &-item {
+    color: $secondaryTextColor;
+    font-size: 14px;
+    line-height: 20px;
+
+    &_isActive {
+      color: $primaryTextColor;
+      font-weight: 500;
+    }
+
+    &:not(:last-child) {
+      &:after {
+        margin-right: 8px;
+        margin-left: 8px;
+        content: '/';
+      }
+    }
+  }
+}
+
+@include s-screen {
+  .Navigation {
+    flex-wrap: wrap;
+
+    &-item {
+      line-height: 24px;
+    }
+  }
+}

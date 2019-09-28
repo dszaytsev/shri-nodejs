@@ -1,0 +1,106 @@
+.Repository {
+  &-header {
+    padding-top: 12px;
+  }
+
+  &-title {
+    color: $primaryTextColor;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &-branch {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+
+  &-branchSelector {
+    margin-left: 4px;
+  }
+
+  &-lastCommit {
+    color: $primaryTextColor;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &-tabs {
+    margin-top: 18px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid $mediumSeparatorColor;
+  }
+
+  &-search {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 0 8px 8px;
+    color: $secondaryTextColor;
+    font-size: 14px;
+    line-height: 20px;
+    border: none;
+    border-bottom: 1px solid $mediumSeparatorColor;
+
+    &::placeholder {
+      color: $grayColor400;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &:focus {
+      border-bottom-color: $grayColor400;
+      outline: none;
+    }
+  }
+
+  &-readme {
+    margin-top: 16px;
+  }
+
+  &-content {
+    margin-top: 24px;
+  }
+}
+
+@include l-screen {
+  .Repository {
+    &-title {
+      max-width: 780px;
+      font-size: 22px;
+    }
+  }
+}
+
+@include m-screen {
+  .Repository {
+    &-title {
+      max-width: 550px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+}
+
+@include s-screen {
+  .Repository {
+    &-header {
+      padding-top: 10px;
+    }
+
+    &-tabs {
+      margin-bottom: 0;
+    }
+
+    &-search {
+      margin-bottom: 0;
+      padding: 8px 0;
+    }
+
+    &-file {
+      margin-top: 16px;
+    }
+  }
+}

@@ -1,0 +1,176 @@
+.FileDiff {
+  &-content {
+    font-size: 12px;
+    font-family: 'PT Mono', monospace;
+    line-height: 20px;
+  }
+
+  &-state {
+    margin-right: 12px;
+    color: #6b69c7;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+
+    &_modified {
+      &:before {
+        content: 'М';
+      }
+    }
+  }
+
+  &-left {
+    display: flex;
+    align-items: center;
+  }
+
+  &-right {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &-total {
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  &-additions {
+    color: #19bc4d;
+  }
+
+  &-substractions {
+    margin-right: 24px;
+    margin-left: 16px;
+    color: #ff3029;
+  }
+
+  &-link {
+    display: block;
+    width: 13px;
+    height: 13px;
+    background-image: url('../images/link.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &-hidden {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 28px;
+    padding-right: 16px;
+    padding-left: 11px;
+    color: $ghostTextColor;
+    background-color: #f1f8ff;
+  }
+
+  &-hiddenLines {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    transform: translateX(-50%);
+  }
+
+  &-below,
+  &-above {
+    &:before {
+      display: inline-block;
+      width: 8px;
+      height: 13px;
+      margin-right: 8px;
+      background-repeat: no-repeat;
+      content: '';
+    }
+  }
+
+  &-below {
+    margin-right: 32px;
+
+    &:before {
+      vertical-align: baseline;
+      background-image: url('../images/hidden_line_arrow_gray.svg');
+      background-position: bottom;
+    }
+  }
+
+  &-above {
+    color: $primaryTextColor;
+
+    &:before {
+      vertical-align: middle;
+      background-image: url('../images/hidden_line_arrow_black.svg');
+    }
+  }
+
+  &-changes {
+    overflow: scroll;
+  }
+
+  &-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    td {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &-line {
+    &_addition {
+      background-color: #e6ffed;
+    }
+
+    &_subtraction {
+      background-color: #ffeef0;
+    }
+  }
+
+  &-prevNumber,
+  &-currentNumber {
+    width: 42px;
+    min-width: 42px;
+    text-align: right;
+  }
+
+  &-lineContent {
+    padding: 0 28px;
+
+    pre {
+      margin: 0;
+      padding: 0;
+      font-family: 'PT Mono', monospace;
+    }
+  }
+}
+
+@include s-screen {
+  .FileDiff {
+    &-header {
+      flex-wrap: wrap;
+    }
+
+    &-right {
+      flex: 100%;
+      margin-top: 8px;
+      margin-left: 0;
+    }
+
+    &-left {
+      overflow: hidden;
+    }
+
+    &-substractions {
+      margin-left: 8px;
+    }
+
+    &-link {
+      margin-left: auto;
+    }
+
+    &-hiddenLines {
+      display: none;
+    }
+  }
+}

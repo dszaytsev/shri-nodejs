@@ -1,0 +1,32 @@
+mixin navigation(items)
+  - let lastIndex = items.length - 1
+  .Navigation
+    each item, index in items
+      .Navigation-item(class=(lastIndex === index && 'Navigation-item_isActive'))
+        = item
+
+mixin tabs(items)
+  .Tabs
+    each item in items
+      a.Tabs-item(href=item.href class=(item.isActive && 'Tabs-item_isActive'))= item.title
+
+mixin fileHistoryRecord(record)
+  - const { title, message, hash, committer, time, avatarUrl= 'avatar.716304c4.svg' } = record
+  .FileHistoryRecord
+    .FileHistoryRecord-avatar(style=`background-image: url("${avatarUrl}")`)
+    .FileHistoryRecord-info
+      .FileHistoryRecord-title= title
+      .FileHistoryRecord-message= message
+      .FileHistoryRecord-commitBlock
+        .FileHistoryRecord-hash
+          a.FileHistoryRecord-commitLink.Link(href='#')= hash
+        .FileHistoryRecord-committer
+          | by
+          = ' '
+          .Committer= committer
+        .FileHistoryRecord-time= time
+    .FileHistoryRecord-commit
+      a.FileHistoryRecord-commitLink.Link(href='#')= hash
+    //- интересно, для чего это
+    .FileHistoryRecord-icon
+

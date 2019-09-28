@@ -1,0 +1,75 @@
+.Commit {
+  &-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  &-back {
+    display: none;
+    color: $secondaryTextColor;
+
+    &:before {
+      display: inline-block;
+      width: 9px;
+      height: 18px;
+      margin-right: 6px;
+      vertical-align: bottom;
+      background-image: url('../images/arrow_left_gray.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      content: '';
+    }
+  }
+
+  &-showFiles {
+    display: flex;
+    align-items: center;
+    padding: 7px 12px 6px;
+    font-size: 13px;
+    line-height: 15px;
+    background-color: #e6e6e6;
+    border-radius: 4px;
+
+    &:before {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-right: 6px;
+      background-image: url('../images/burger.svg');
+      background-repeat: no-repeat;
+      background-size: center;
+      content: '';
+    }
+  }
+
+  &-author {
+    flex-basis: 100%;
+    margin-top: 5px;
+  }
+}
+
+@include s-screen {
+  .Commit {
+    &-back {
+      display: block;
+    }
+
+    &-actions {
+      flex: 100%;
+      order: -1;
+      margin-bottom: 12px;
+      margin-left: 0;
+    }
+
+    &-showFiles {
+      margin-left: auto;
+    }
+  }
+}
