@@ -1,8 +1,5 @@
 export function updateFiles(files) {
-  return {
-    type: 'Files/update',
-    payload: Object.keys(files).filter(Boolean)
-  }
+  return { type: 'Files/update', files }
 }
 
 export function fetchFiles() {
@@ -14,8 +11,5 @@ export function fetchFiles() {
 }
 
 export function findFile(value) {
-  return {
-    type: 'Files/search',
-    payload: value
-  }
+  return { type: 'Files/search', value }
 }

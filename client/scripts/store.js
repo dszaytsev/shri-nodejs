@@ -7,18 +7,19 @@ const initState = {
   }
 }
 
-const reducer = (state, action) => {
-  switch (action.type) {
+const reducer = (state, { type, ...payload }) => {
+  switch (type) {
   case 'Files/update': {
-    const search = state.files.search.length ? state.files.search : action.payload
+    const search = state.files.search.length ? state.files.search : payload.files
+
     return { ...state,
-      files: { content: action.payload, search }
+      files: { content: payload.files, search }
     }
   }
 
   case 'Files/search': {
-    const value = action.payload
-    const search = state.files.content.filter(file => file.toLowerCase().includes(value.toLowerCase()))
+    const value = payload.value.toLowerCase()
+    const search = state.files.content.filter(({ name }) => name.toLowerCase().includes(value.toLowerCase()))
 
     return { ...state, files: { ...state.files, search } }
   }
