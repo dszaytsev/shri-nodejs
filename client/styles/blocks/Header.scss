@@ -18,6 +18,14 @@
     background-repeat: no-repeat;
   }
 
+  &-link {
+    display: block;
+    width: 118px;
+    height: 20px;
+    background-image: url('../images/logo.svg');
+    background-repeat: no-repeat;
+  }
+
   &-repo {
     display: flex;
     align-items: stretch;
