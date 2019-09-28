@@ -1,9 +1,5 @@
-import store from './scripts/store'
-
-import Index from './scripts/screens/index'
+import initSearch from './scripts/search'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const indexPage = document.querySelector('[data-screen="Index"]')
-
-  new Index(indexPage, store)
+  initSearch()
 })

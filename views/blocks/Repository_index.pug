@@ -1,4 +1,4 @@
-.Repository(data-screen='Index')
+.Repository
   .Repository-header
     .Repository-branch
       .Repository-title arcadia
@@ -22,7 +22,7 @@
   .Repository-tabs
     +tabs([{ title: 'Files', href: '/', isActive: true }, { title: 'Branches', href: '/branches' }])
 
-  input.Repository-search(data-el='Index/search' placeholder='Поиск')
+  input.Repository-search(data-component='Search' placeholder='Поиск')
 
   .Repository-files
     include ../blocks/RepositoryFiles

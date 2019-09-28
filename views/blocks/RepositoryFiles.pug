@@ -1,5 +1,5 @@
 .Table.RepositoryFiles
-  dib
+  div.RepositoryFiles-Head
     .Table-row.Table-row_head
       .Table-cell Name
       .Table-cell Last commit
@@ -7,7 +7,7 @@
       .Table-cell Committer
       .Table-cell Updated
 
-  div(data-el='Index/files')
+  div(data-component='Files')
     .Table-row
       .Table-cell
         .RepositoryFiles-icon: .FileIcon.FileIcon_folder

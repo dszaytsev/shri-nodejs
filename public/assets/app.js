@@ -123,59 +123,82 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.useThunk = s;
-exports.default = void 0;
+exports.connectStore = e;
+exports.useThunk = r;
+exports.Store = exports.Component = void 0;
 
-var t = function (t, e) {
-  var s = this;
+var t = function (t, i) {
+  this.props = i, this.elem = t, this.init();
+};
+
+exports.Component = t;
+t.prototype.init = function () {}, t.prototype.updateDOM = function (t) {
+  this.elem.innerHTML = this.render(t);
+}, t.prototype.render = function (t) {};
+
+var i = function (t, i) {
+  var n = this;
   this.__subscribers = [], this.__state = {}, this.subscribe = function (t) {
-    return s.__subscribers.push(t), function () {
-      return s._unsubscribe(t);
+    return n.__subscribers.push(t), function () {
+      return n._unsubscribe(t);
     };
   }, this.dispatch = function (t) {
-    s._state = s._reducer(s._state, t);
+    if (!t) throw new Error("Action is not defined");
+    n._state = n._reducer(n._state, t);
   }, this.getState = function () {
-    return s._state;
+    return n._state;
   }, this.use = function (t) {
     if ("function" == typeof t) {
-      var e = s.dispatch;
-      s.dispatch = t(s)(e);
+      var i = n.dispatch;
+      n.dispatch = t(n)(i);
     }
   }, this._unsubscribe = function (t) {
-    s.__subscribers = s.__subscribers.filter(function (e) {
-      return e !== t;
+    n.__subscribers = n.__subscribers.filter(function (i) {
+      return i !== t;
     });
   }, this._notify = function () {
-    s.__subscribers.forEach(function (t) {
-      return t(s.getState());
+    n.__subscribers.forEach(function (t) {
+      return t(n.getState());
     });
-  }, this._reducer = t, this._state = e;
+  }, this._reducer = t, this._state = i;
 },
-    e = {
+    n = {
   _state: {
     configurable: !0
   }
 };
 
-function s() {
+exports.Store = i;
+
+function e(t, i) {
+  var n = function (i) {
+    function n(n, e) {
+      i.call(this, n, e), t.subscribe(this.updateDOM.bind(this)), this.dispatch = t.dispatch;
+    }
+
+    return i && (n.__proto__ = i), (n.prototype = Object.create(i && i.prototype)).constructor = n, n;
+  }(i);
+
+  return n.prototype.dispatch = t.dispatch, n;
+}
+
+function r() {
   return function (t) {
-    var e = t.dispatch,
-        s = t.getState;
+    var i = t.dispatch,
+        n = t.getState;
     return function (t) {
-      return function (n) {
-        return "function" == typeof n ? n(e, s()) : t(n);
+      return function (e) {
+        return "function" == typeof e ? e(i, n()) : t(e);
       };
     };
   };
 }
 
-e._state.get = function () {
+n._state.get = function () {
   return this.__state;
-}, e._state.set = function (t) {
+}, n._state.set = function (t) {
   this.__state = t, this._notify();
-}, Object.defineProperties(t.prototype, e);
-var _default = t;
-exports.default = _default;
+}, Object.defineProperties(i.prototype, n);
 },{}],"scripts/store.js":[function(require,module,exports) {
 "use strict";
 
@@ -184,11 +207,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _reduxStore = _interopRequireWildcard(require("redux-store"));
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; if (obj != null) { var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+var _reduxStore = require("redux-store");
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -236,11 +255,11 @@ var reducer = function reducer(state, action) {
   }
 };
 
-var store = new _reduxStore.default(reducer, initState);
+var store = new _reduxStore.Store(reducer, initState);
 store.use((0, _reduxStore.useThunk)());
 var _default = store;
 exports.default = _default;
-},{"redux-store":"../node_modules/redux-store/dist/index.mjs"}],"scripts/screens/index/actions.js":[function(require,module,exports) {
+},{"redux-store":"../node_modules/redux-store/dist/index.mjs"}],"scripts/actions.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -257,7 +276,7 @@ function updateFiles(files) {
   };
 }
 
-function fetchFiles(params) {
+function fetchFiles() {
   return function (dispatch) {
     fetch('/api/repos/task1/tree').then(function (res) {
       return res.json();
@@ -273,7 +292,7 @@ function findFile(value) {
     payload: value
   };
 }
-},{}],"scripts/screens/index/index.js":[function(require,module,exports) {
+},{}],"scripts/components/Files.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -281,19 +300,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _store = _interopRequireDefault(require("../../store"));
+var _reduxStore = require("redux-store");
 
-var _actions = require("./actions");
+var _store = _interopRequireDefault(require("../store"));
+
+var _actions = require("../actions");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -301,73 +316,171 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Index =
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Files =
 /*#__PURE__*/
-function () {
-  function Index(el, store) {
-    _classCallCheck(this, Index);
+function (_Component) {
+  _inherits(Files, _Component);
 
-    this._store = store;
+  function Files(props) {
+    var _this;
 
-    var _map = ['search', 'files'].map(function (name) {
-      return el.querySelector("[data-el=\"Index/".concat(name, "\"]"));
-    }),
-        _map2 = _slicedToArray(_map, 2),
-        searchEl = _map2[0],
-        files = _map2[1];
+    _classCallCheck(this, Files);
 
-    this._searchEl = searchEl;
-    this._files = files;
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Files).call(this, props));
 
-    this._searchEl.addEventListener('input', this.handleInput);
+    _this.dispatch((0, _actions.fetchFiles)());
 
-    store.dispatch((0, _actions.fetchFiles)('repos params'));
-    store.subscribe(this.render.bind(this));
+    return _this;
   }
 
-  _createClass(Index, [{
-    key: "handleInput",
-    value: function handleInput(e) {
-      var value = e.currentTarget.value;
-
-      _store.default.dispatch((0, _actions.findFile)(value));
-    } // *TODO: поменять структуру файла в апи | Created at: 27.Sep.2019
-
-  }, {
-    key: "renderFile",
-    value: function renderFile(fileName) {
-      return "\n      <div class=\"Table-row\">\n        <div class=\"Table-cell\">\n          <div class=\"RepositoryFiles-icon\">\n            <div class=\"FileIcon FileIcon_folder\"></div>\n          </div>".concat(fileName, "</div>\n        <div class=\"Table-cell\"><a class=\"Link\" href=\"#\">d53dsv</a></div>\n        <div class=\"Table-cell\">[vcs] test for empty commit message</div>\n        <div class=\"Table-cell\">\n          <div class=\"Committer\">nikitxskv</div>\n        </div>\n        <div class=\"Table-cell\">1 min ago</div>\n      </div>\n    ");
-    }
-  }, {
+  _createClass(Files, [{
     key: "render",
-    value: function render(state) {
-      var _this = this;
-
-      var files = state.files.search.reduce(function (acc, file) {
-        return acc += _this.renderFile(file);
+    value: function render(_ref) {
+      var _ref$files = _ref.files,
+          files = _ref$files === void 0 ? [] : _ref$files;
+      return files.search.reduce(function (acc, file) {
+        return acc + "\n      <div class=\"Table-row\">\n        <div class=\"Table-cell\">\n          <div class=\"RepositoryFiles-icon\">\n            <div class=\"FileIcon FileIcon_folder\"></div>\n          </div>".concat(file, "</div>\n        <div class=\"Table-cell\"><a class=\"Link\" href=\"#\">d53dsv</a></div>\n        <div class=\"Table-cell\">[vcs] test for empty commit message</div>\n        <div class=\"Table-cell\">\n          <div class=\"Committer\">nikitxskv</div>\n        </div>\n        <div class=\"Table-cell\">1 min ago</div>\n      </div>\n    ");
       }, '');
-      this._files.innerHTML = files;
     }
   }]);
 
-  return Index;
-}();
+  return Files;
+}(_reduxStore.Component);
 
-exports.default = Index;
-},{"../../store":"scripts/store.js","./actions":"scripts/screens/index/actions.js"}],"app.js":[function(require,module,exports) {
+var _default = (0, _reduxStore.connectStore)(_store.default, Files);
+
+exports.default = _default;
+},{"redux-store":"../node_modules/redux-store/dist/index.mjs","../store":"scripts/store.js","../actions":"scripts/actions.js"}],"scripts/components/Search.js":[function(require,module,exports) {
 "use strict";
 
-var _store = _interopRequireDefault(require("./scripts/store"));
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
-var _index = _interopRequireDefault(require("./scripts/screens/index"));
+var _reduxStore = require("redux-store");
+
+var _store = _interopRequireDefault(require("../store"));
+
+var _actions = require("../actions");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Search =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Search, _Component);
+
+  function Search(elem, props) {
+    var _this;
+
+    _classCallCheck(this, Search);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Search).call(this, elem, props));
+
+    _this.elem.addEventListener('input', _this.handleInput.bind(_assertThisInitialized(_this)));
+
+    return _this;
+  }
+
+  _createClass(Search, [{
+    key: "handleInput",
+    value: function handleInput(e) {
+      this.dispatch((0, _actions.findFile)(e.target.value));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return null;
+    }
+  }]);
+
+  return Search;
+}(_reduxStore.Component);
+
+var _default = (0, _reduxStore.connectStore)(_store.default, Search);
+
+exports.default = _default;
+},{"redux-store":"../node_modules/redux-store/dist/index.mjs","../store":"scripts/store.js","../actions":"scripts/actions.js"}],"scripts/components/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Files", {
+  enumerable: true,
+  get: function () {
+    return _Files.default;
+  }
+});
+Object.defineProperty(exports, "Search", {
+  enumerable: true,
+  get: function () {
+    return _Search.default;
+  }
+});
+
+var _Files = _interopRequireDefault(require("./Files"));
+
+var _Search = _interopRequireDefault(require("./Search"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./Files":"scripts/components/Files.js","./Search":"scripts/components/Search.js"}],"scripts/search.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+var _components = require("./components");
+
+function _default() {
+  var filesEl = document.querySelector('[data-component="Files"]');
+  var searchEl = document.querySelector('[data-component="Search"');
+  if (!filesEl || !searchEl) return;
+  new _components.Search(searchEl);
+  new _components.Files(filesEl);
+}
+},{"./components":"scripts/components/index.js"}],"app.js":[function(require,module,exports) {
+"use strict";
+
+var _search = _interopRequireDefault(require("./scripts/search"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var indexPage = document.querySelector('[data-screen="Index"]');
-  new _index.default(indexPage, _store.default);
+  (0, _search.default)();
 });
-},{"./scripts/store":"scripts/store.js","./scripts/screens/index":"scripts/screens/index/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./scripts/search":"scripts/search.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -395,7 +508,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53482" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58707" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

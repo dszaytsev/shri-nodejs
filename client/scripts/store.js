@@ -1,4 +1,4 @@
-import Store, { useThunk } from 'redux-store'
+import { useThunk, Store } from 'redux-store'
 
 const initState = {
   files: {

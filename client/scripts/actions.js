@@ -5,7 +5,7 @@ export function updateFiles(files) {
   }
 }
 
-export function fetchFiles(params) {
+export function fetchFiles() {
   return dispatch => {
     fetch('/api/repos/task1/tree')
       .then(res => res.json())
