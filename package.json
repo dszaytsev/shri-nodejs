@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "node-sass": "^4.12.0",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "sass": "^1.22.12",
     "stylelint": "^11.0.0",
     "stylelint-config-rational-order": "^0.1.2",
